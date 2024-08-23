@@ -29,7 +29,7 @@ jobs:
             );
 
             const contributorList = contributors.map(
-              contributor => `![${contributor.login}](${contributor.avatar_url}&s=64) | **[@${contributor.login}](${contributor.html_url})**`
+              contributor => `![${contributor.login}](${contributor.avatar_url}&s=32) | **[@${contributor.login}](${contributor.html_url})**`
             ).join('\n');
 
             const { data: readmeContent } = await github.rest.repos.getContent({
