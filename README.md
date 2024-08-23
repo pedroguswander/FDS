@@ -6,19 +6,19 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 <!-- markdown-contributors -->
 
     <div style="display: inline-block; text-align: center; margin: 5px;">
-      <a href="https://github.com/MatheusLustosa">
-        <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=64" width="64" height="64" alt="MatheusLustosa" style="border-radius: 50%;"/>
-      </a>
-      <br>
-      <a href="https://github.com/MatheusLustosa" style="display: block; font-size: 12px; text-decoration: none; color: #0366d6; margin-top: 5px;">@MatheusLustosa</a>
-    </div>
-
-    <div style="display: inline-block; text-align: center; margin: 5px;">
       <a href="https://github.com/arthurxavi">
         <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=64" width="64" height="64" alt="arthurxavi" style="border-radius: 50%;"/>
       </a>
       <br>
       <a href="https://github.com/arthurxavi" style="display: block; font-size: 12px; text-decoration: none; color: #0366d6; margin-top: 5px;">@arthurxavi</a>
+    </div>
+
+    <div style="display: inline-block; text-align: center; margin: 5px;">
+      <a href="https://github.com/MatheusLustosa">
+        <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=64" width="64" height="64" alt="MatheusLustosa" style="border-radius: 50%;"/>
+      </a>
+      <br>
+      <a href="https://github.com/MatheusLustosa" style="display: block; font-size: 12px; text-decoration: none; color: #0366d6; margin-top: 5px;">@MatheusLustosa</a>
     </div>
 
     <div style="display: inline-block; text-align: center; margin: 5px;">
