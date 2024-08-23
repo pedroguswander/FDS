@@ -5,27 +5,20 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
 
-  <div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 10px 0;">
-    
-        <div style="text-align: center; width: 100px;">
-          <a href="https://github.com/arthurxavi" style="display: block;">
-            <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=64" width="64" height="64" alt="arthurxavi" style="border-radius: 50%;"/>
-          </a>
-          <p><a href="https://github.com/arthurxavi" style="text-decoration: none; color: #0366d6;">@arthurxavi</a></p>
-        </div>
-        <div style="text-align: center; width: 100px;">
-          <a href="https://github.com/MatheusLustosa" style="display: block;">
-            <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=64" width="64" height="64" alt="MatheusLustosa" style="border-radius: 50%;"/>
-          </a>
-          <p><a href="https://github.com/MatheusLustosa" style="text-decoration: none; color: #0366d6;">@MatheusLustosa</a></p>
-        </div>
-        <div style="text-align: center; width: 100px;">
-          <a href="https://github.com/pedroguswander" style="display: block;">
-            <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=64" width="64" height="64" alt="pedroguswander" style="border-radius: 50%;"/>
-          </a>
-          <p><a href="https://github.com/pedroguswander" style="text-decoration: none; color: #0366d6;">@pedroguswander</a></p>
-        </div>
-  </div>
+| ![Avatar](src) | Username |
+|----------------|----------|
+
+    | ![MatheusLustosa](https://avatars.githubusercontent.com/u/108696459?v=4&s=64) | [@MatheusLustosa](https://github.com/MatheusLustosa) |
+  
+
+    | ![arthurxavi](https://avatars.githubusercontent.com/u/169710371?v=4&s=64) | [@arthurxavi](https://github.com/arthurxavi) |
+  
+
+    | ![pedroguswander](https://avatars.githubusercontent.com/u/168600233?v=4&s=64) | [@pedroguswander](https://github.com/pedroguswander) |
+  
+
+    | ![github-actions[bot]](https://avatars.githubusercontent.com/in/15368?v=4&s=64) | [@github-actions[bot]](https://github.com/apps/github-actions) |
+  
 <!-- /markdown-contributors -->
 
 ## Como usar?
