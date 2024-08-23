@@ -4,33 +4,21 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+<table>
   
-      <div style="text-align: center;">
-        <a href="https://github.com/MatheusLustosa" style="display: block;">
-          <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=64" width="64" height="64" alt="MatheusLustosa" style="border-radius: 50%;"/>
-        </a>
-        <p><a href="https://github.com/MatheusLustosa" style="text-decoration: none; color: #0366d6;">@MatheusLustosa</a></p>
-      </div>
-      <div style="text-align: center;">
-        <a href="https://github.com/arthurxavi" style="display: block;">
-          <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=64" width="64" height="64" alt="arthurxavi" style="border-radius: 50%;"/>
-        </a>
-        <p><a href="https://github.com/arthurxavi" style="text-decoration: none; color: #0366d6;">@arthurxavi</a></p>
-      </div>
-      <div style="text-align: center;">
-        <a href="https://github.com/pedroguswander" style="display: block;">
-          <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=64" width="64" height="64" alt="pedroguswander" style="border-radius: 50%;"/>
-        </a>
-        <p><a href="https://github.com/pedroguswander" style="text-decoration: none; color: #0366d6;">@pedroguswander</a></p>
-      </div>
-      <div style="text-align: center;">
-        <a href="https://github.com/apps/github-actions" style="display: block;">
-          <img src="https://avatars.githubusercontent.com/in/15368?v=4&s=64" width="64" height="64" alt="github-actions[bot]" style="border-radius: 50%;"/>
-        </a>
-        <p><a href="https://github.com/apps/github-actions" style="text-decoration: none; color: #0366d6;">@github-actions[bot]</a></p>
-      </div>
-</div>
+      <tr>
+        <td><a href="https://github.com/arthurxavi"><img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi" /></a></td>
+        <td><a href="https://github.com/arthurxavi">**[@arthurxavi](https://github.com/arthurxavi)**</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/MatheusLustosa"><img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" alt="MatheusLustosa" /></a></td>
+        <td><a href="https://github.com/MatheusLustosa">**[@MatheusLustosa](https://github.com/MatheusLustosa)**</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/pedroguswander"><img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" alt="pedroguswander" /></a></td>
+        <td><a href="https://github.com/pedroguswander">**[@pedroguswander](https://github.com/pedroguswander)**</a></td>
+      </tr>
+</table>
 <!-- /markdown-contributors -->
 
 ## Como usar?
