@@ -4,9 +4,10 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
-![arthurxavi](https://avatars.githubusercontent.com/u/169710371?v=4&s=64) | **[@arthurxavi](https://github.com/arthurxavi)**
-![MatheusLustosa](https://avatars.githubusercontent.com/u/108696459?v=4&s=64) | **[@MatheusLustosa](https://github.com/MatheusLustosa)**
-![pedroguswander](https://avatars.githubusercontent.com/u/168600233?v=4&s=64) | **[@pedroguswander](https://github.com/pedroguswander)**
+![MatheusLustosa](https://avatars.githubusercontent.com/u/108696459?v=4&s=32) | **[@MatheusLustosa](https://github.com/MatheusLustosa)**
+![arthurxavi](https://avatars.githubusercontent.com/u/169710371?v=4&s=32) | **[@arthurxavi](https://github.com/arthurxavi)**
+![pedroguswander](https://avatars.githubusercontent.com/u/168600233?v=4&s=32) | **[@pedroguswander](https://github.com/pedroguswander)**
+![github-actions[bot]](https://avatars.githubusercontent.com/in/15368?v=4&s=32) | **[@github-actions[bot]](https://github.com/apps/github-actions)**
 <!-- /markdown-contributors -->
 
 ## Como usar?
