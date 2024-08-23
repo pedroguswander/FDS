@@ -4,21 +4,10 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
-<table>
-  
-      <tr>
-        <td><a href="https://github.com/arthurxavi"><img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi" /></a></td>
-        <td><a href="https://github.com/arthurxavi">**[@arthurxavi](https://github.com/arthurxavi)**</a></td>
-      </tr>
-      <tr>
-        <td><a href="https://github.com/MatheusLustosa"><img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" alt="MatheusLustosa" /></a></td>
-        <td><a href="https://github.com/MatheusLustosa">**[@MatheusLustosa](https://github.com/MatheusLustosa)**</a></td>
-      </tr>
-      <tr>
-        <td><a href="https://github.com/pedroguswander"><img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" alt="pedroguswander" /></a></td>
-        <td><a href="https://github.com/pedroguswander">**[@pedroguswander](https://github.com/pedroguswander)**</a></td>
-      </tr>
-</table>
+<a href="https://github.com/MatheusLustosa"><img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" /></a> | **[@MatheusLustosa](https://github.com/MatheusLustosa)**
+<a href="https://github.com/arthurxavi"><img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" /></a> | **[@arthurxavi](https://github.com/arthurxavi)**
+<a href="https://github.com/pedroguswander"><img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" /></a> | **[@pedroguswander](https://github.com/pedroguswander)**
+<a href="https://github.com/apps/github-actions"><img src="https://avatars.githubusercontent.com/in/15368?v=4&s=32" width="32" height="32" /></a> | **[@github-actions[bot]](https://github.com/apps/github-actions)**
 <!-- /markdown-contributors -->
 
 ## Como usar?
