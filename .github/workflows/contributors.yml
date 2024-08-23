@@ -1,1 +1,72 @@
 
+name: Update Contributors List
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate Contributors List
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const contributors = await github.paginate(
+              github.rest.repos.listContributors,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100
+              }
+            );
+
+            // Filtrar bots
+            const filteredContributors = contributors.filter(
+              contributor => !contributor.login.toLowerCase().includes('bot')
+            );
+
+            // Gerar lista com tamanho de texto ajustado
+            const contributorList = filteredContributors.map(
+              contributor => `<a href="${contributor.html_url}">
+                                <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}"/>
+                                <br>
+                                <span style="font-size: 12px;">@${contributor.login}</span>
+                              </a>`
+            ).join('\n');
+
+            const { data: readmeContent } = await github.rest.repos.getContent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: 'README.md'
+            });
+
+            const readmeBuffer = Buffer.from(readmeContent.content, 'base64');
+            let readmeText = readmeBuffer.toString('utf-8');
+
+            const startMarker = '<!-- markdown-contributors -->';
+            const endMarker = '<!-- /markdown-contributors -->';
+
+            const startIndex = readmeText.indexOf(startMarker) + startMarker.length;
+            const endIndex = readmeText.indexOf(endMarker);
+
+            const newReadmeText = `${readmeText.substring(0, startIndex)}\n${contributorList}\n${readmeText.substring(endIndex)}`;
+
+            const newReadmeBuffer = Buffer.from(newReadmeText, 'utf-8');
+
+            await github.rest.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: 'README.md',
+              message: 'Update contributors list',
+              content: newReadmeBuffer.toString('base64'),
+              sha: readmeContent.sha
+            });
