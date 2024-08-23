@@ -38,10 +38,10 @@ jobs:
               contributor => `
                 <div style="display: inline-block; text-align: center; margin: 5px;">
                   <a href="${contributor.html_url}">
-                    <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}" />
+                    <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}" style="border-radius: 50%;"/>
                   </a>
                   <br>
-                  <a href="${contributor.html_url}" style="font-size: 12px; text-decoration: none; color: #0366d6;">@${contributor.login}</a>
+                  <a href="${contributor.html_url}" style="display: block; font-size: 12px; text-decoration: none; color: #0366d6; margin-top: 5px;">@${contributor.login}</a>
                 </div>`
             ).join('\n');
 
