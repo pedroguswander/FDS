@@ -28,7 +28,12 @@ jobs:
               }
             );
 
-            const contributorList = contributors.map(
+            // Filtrar bots (ajuste os critérios conforme necessário)
+            const filteredContributors = contributors.filter(
+              contributor => !contributor.login.toLowerCase().includes('bot')
+            );
+
+            const contributorList = filteredContributors.map(
               contributor => `<a href="${contributor.html_url}"><img src="${contributor.avatar_url}&s=32" width="32" height="32" /></a> | **[@${contributor.login}](${contributor.html_url})**`
             ).join('\n');
 
