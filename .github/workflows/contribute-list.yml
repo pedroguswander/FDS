@@ -1,4 +1,4 @@
-name: Contribute List
+name: Update Contributors List
 
 on:
   push:
@@ -13,14 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Run Contribute List
-      uses: niteshseram/contribute-list@v1.1.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        contribute_list: README.md
-        contributors_per_row: 4
-        readme_path: README.md
-        start_title: '<!-- START CONTRIBUTORS LIST -->'
-        end_title: '<!-- END CONTRIBUTORS LIST -->'
+      - name: Generate Contributors List
+        uses: docker://jakejarvis/contributors-action:latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          README_PATH: 'README.md'
+          MAX_LINES: 7
