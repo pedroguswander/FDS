@@ -28,13 +28,15 @@ jobs:
               }
             );
 
-            // Filtrar bots (ajuste os critérios conforme necessário)
+            // Filtrar bots
             const filteredContributors = contributors.filter(
               contributor => !contributor.login.toLowerCase().includes('bot')
             );
 
             const contributorList = filteredContributors.map(
-              contributor => `<a href="${contributor.html_url}"><img src="${contributor.avatar_url}&s=32" width="32" height="32" /></a> | **[@${contributor.login}](${contributor.html_url})**`
+              contributor => `<a href="${contributor.html_url}">
+                                <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}"/>
+                              </a>`
             ).join('\n');
 
             const { data: readmeContent } = await github.rest.repos.getContent({
@@ -64,4 +66,3 @@ jobs:
               content: newReadmeBuffer.toString('base64'),
               sha: readmeContent.sha
             });
-
