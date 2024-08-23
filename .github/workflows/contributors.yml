@@ -33,9 +33,12 @@ jobs:
               contributor => !contributor.login.toLowerCase().includes('bot')
             );
 
+            // Gerar lista com tamanho de texto ajustado
             const contributorList = filteredContributors.map(
               contributor => `<a href="${contributor.html_url}">
                                 <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}"/>
+                                <br>
+                                <span style="font-size: 12px;">@${contributor.login}</span>
                               </a>`
             ).join('\n');
 
