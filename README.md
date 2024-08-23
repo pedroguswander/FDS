@@ -2,7 +2,9 @@
 
 Oferece uma solução personalizada para proteger o que é mais importante para você. Nosso aplicativo permite criar, gerenciar e ajustar suas apólices de seguro de acordo com suas necessidades e estilo de vida. Acompanhe seu histórico e veja o crescimento da sua proteção de forma prática e visual, garantindo que você tenha sempre a cobertura ideal.
 
-## Hall-Of-Fame
+## Hall-of-Fame
+<!-- START CONTRIBUTORS LIST -->
+<!-- END CONTRIBUTORS LIST -->
 
 ## Como usar?
 
