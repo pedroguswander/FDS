@@ -33,13 +33,16 @@ jobs:
               contributor => !contributor.login.toLowerCase().includes('bot')
             );
 
-            // Gerar lista com tamanho de texto ajustado
+            // Gerar lista com link abaixo da imagem
             const contributorList = filteredContributors.map(
-              contributor => `<a href="${contributor.html_url}">
-                                <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}"/>
-                                <br>
-                                <span style="font-size: 12px;">@${contributor.login}</span>
-                              </a>`
+              contributor => `
+                <div style="display: inline-block; text-align: center; margin: 5px;">
+                  <a href="${contributor.html_url}">
+                    <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}" />
+                  </a>
+                  <br>
+                  <a href="${contributor.html_url}" style="font-size: 12px; text-decoration: none; color: #0366d6;">@${contributor.login}</a>
+                </div>`
             ).join('\n');
 
             const { data: readmeContent } = await github.rest.repos.getContent({
