@@ -5,20 +5,18 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
 
-| ![Avatar](src) | Username |
-|----------------|----------|
-
-    | ![MatheusLustosa](https://avatars.githubusercontent.com/u/108696459?v=4&s=64) | [@MatheusLustosa](https://github.com/MatheusLustosa) |
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
   
-
-    | ![arthurxavi](https://avatars.githubusercontent.com/u/169710371?v=4&s=64) | [@arthurxavi](https://github.com/arthurxavi) |
-  
-
-    | ![pedroguswander](https://avatars.githubusercontent.com/u/168600233?v=4&s=64) | [@pedroguswander](https://github.com/pedroguswander) |
-  
-
-    | ![github-actions[bot]](https://avatars.githubusercontent.com/in/15368?v=4&s=64) | [@github-actions[bot]](https://github.com/apps/github-actions) |
-  
+      <a href="https://github.com/arthurxavi">
+        <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=64" width="64" height="64" alt="arthurxavi" style="border-radius: 50%;"/>
+      </a>
+      <a href="https://github.com/MatheusLustosa">
+        <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=64" width="64" height="64" alt="MatheusLustosa" style="border-radius: 50%;"/>
+      </a>
+      <a href="https://github.com/pedroguswander">
+        <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=64" width="64" height="64" alt="pedroguswander" style="border-radius: 50%;"/>
+      </a>
+</div>
 <!-- /markdown-contributors -->
 
 ## Como usar?
