@@ -38,7 +38,7 @@ jobs:
               contributor => `<a href="${contributor.html_url}">
                                 <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}"/>
                                 <br>
-                                <span style="font-size: 12px;">@${contributor.login}</span>
+                                <span style="font-size: 1px;">@${contributor.login}</span>
                               </a>`
             ).join('\n');
 
