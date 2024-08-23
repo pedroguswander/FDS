@@ -29,7 +29,12 @@ jobs:
             );
 
             const contributorList = contributors.map(
-              contributor => `<a href="${contributor.html_url}"><img src="${contributor.avatar_url}&s=32" width="32" height="32" /></a> | **[@${contributor.login}](${contributor.html_url})**`
+              contributor => `<div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <a href="${contributor.html_url}" style="margin-right: 10px;">
+                                  <img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}" />
+                                </a>
+                                <a href="${contributor.html_url}">**[@${contributor.login}](${contributor.html_url})**</a>
+                              </div>`
             ).join('\n');
 
             const { data: readmeContent } = await github.rest.repos.getContent({
@@ -59,5 +64,4 @@ jobs:
               content: newReadmeBuffer.toString('base64'),
               sha: readmeContent.sha
             });
-
 
