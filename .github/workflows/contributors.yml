@@ -28,17 +28,15 @@ jobs:
               }
             );
 
-            const contributorList = `<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            const contributorList = `<table>
               ${contributors.map(
                 contributor => `
-                  <div style="text-align: center;">
-                    <a href="${contributor.html_url}" style="display: block;">
-                      <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}" style="border-radius: 50%;"/>
-                    </a>
-                    <p><a href="${contributor.html_url}" style="text-decoration: none; color: #0366d6;">@${contributor.login}</a></p>
-                  </div>`
+                  <tr>
+                    <td><a href="${contributor.html_url}"><img src="${contributor.avatar_url}&s=32" width="32" height="32" alt="${contributor.login}" /></a></td>
+                    <td><a href="${contributor.html_url}">**[@${contributor.login}](${contributor.html_url})**</a></td>
+                  </tr>`
               ).join('')}
-            </div>`;
+            </table>`;
 
             const { data: readmeContent } = await github.rest.repos.getContent({
               owner: context.repo.owner,
