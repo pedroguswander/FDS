@@ -4,14 +4,20 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
-<a href="https://github.com/arthurxavi">
-                    <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi"/>
-                  </a>
 <a href="https://github.com/MatheusLustosa">
                     <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" alt="MatheusLustosa"/>
+                    <br>
+                    <span style="font-size: 12px;">@MatheusLustosa</span>
+                  </a>
+<a href="https://github.com/arthurxavi">
+                    <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi"/>
+                    <br>
+                    <span style="font-size: 12px;">@arthurxavi</span>
                   </a>
 <a href="https://github.com/pedroguswander">
                     <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" alt="pedroguswander"/>
+                    <br>
+                    <span style="font-size: 12px;">@pedroguswander</span>
                   </a>
 <!-- /markdown-contributors -->
 
