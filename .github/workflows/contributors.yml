@@ -33,13 +33,16 @@ jobs:
               contributor => !contributor.login.toLowerCase().includes('bot')
             );
 
-            // Gerar lista com tamanho de texto ajustado
+            // Gerar lista com HTML para exibir imagem e link abaixo
             const contributorList = filteredContributors.map(
-              contributor => `<a href="${contributor.html_url}">
-                                <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}"/>
-                                <br>
-                                <span style="font-size: 1px;">@${contributor.login}</span>
-                              </a>`
+              contributor => `
+                <div style="display: inline-block; text-align: center; margin: 5px;">
+                  <a href="${contributor.html_url}" target="_blank">
+                    <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}" style="border-radius: 50%;"/>
+                  </a>
+                  <br>
+                  <a href="${contributor.html_url}" target="_blank" style="display: block; font-size: 12px; text-decoration: none; color: #0366d6; margin-top: 5px;">@${contributor.login}</a>
+                </div>`
             ).join('\n');
 
             const { data: readmeContent } = await github.rest.repos.getContent({
@@ -69,4 +72,3 @@ jobs:
               content: newReadmeBuffer.toString('base64'),
               sha: readmeContent.sha
             });
-
