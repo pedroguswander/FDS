@@ -22,7 +22,4 @@ Python 3.6 ou superior.
 ## 🙋‍♂️ Criado por:
 [Matheus Lustosa](https://github.com/MatheusLustosa)
 
-## Licença
-[MIT](https://choosealicense.com/licenses/mit/)
 
-Esse projeto tem escopo meramente educacional.
