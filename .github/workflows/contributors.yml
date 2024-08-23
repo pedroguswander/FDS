@@ -60,6 +60,7 @@ jobs:
             const startIndex = readmeText.indexOf(startMarker) + startMarker.length;
             const endIndex = readmeText.indexOf(endMarker);
 
+            // Certifique-se de que o texto entre os marcadores é substituído corretamente
             const newReadmeText = `${readmeText.substring(0, startIndex)}\n${contributorList}\n${readmeText.substring(endIndex)}`;
 
             const newReadmeBuffer = Buffer.from(newReadmeText, 'utf-8');
