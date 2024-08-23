@@ -4,21 +4,30 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 
 ## Hall-of-Fame
 <!-- markdown-contributors -->
-<a href="https://github.com/MatheusLustosa">
-                    <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" alt="MatheusLustosa"/>
-                    <br>
-                    <span style="font-size: 12px;">@MatheusLustosa</span>
-                  </a>
-<a href="https://github.com/arthurxavi">
-                    <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi"/>
-                    <br>
-                    <span style="font-size: 12px;">@arthurxavi</span>
-                  </a>
-<a href="https://github.com/pedroguswander">
-                    <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" alt="pedroguswander"/>
-                    <br>
-                    <span style="font-size: 12px;">@pedroguswander</span>
-                  </a>
+
+    <div style="display: inline-block; text-align: center; margin: 5px;">
+      <a href="https://github.com/MatheusLustosa">
+        <img src="https://avatars.githubusercontent.com/u/108696459?v=4&s=32" width="32" height="32" alt="MatheusLustosa" />
+      </a>
+      <br>
+      <a href="https://github.com/MatheusLustosa" style="font-size: 12px; text-decoration: none; color: #0366d6;">@MatheusLustosa</a>
+    </div>
+
+    <div style="display: inline-block; text-align: center; margin: 5px;">
+      <a href="https://github.com/arthurxavi">
+        <img src="https://avatars.githubusercontent.com/u/169710371?v=4&s=32" width="32" height="32" alt="arthurxavi" />
+      </a>
+      <br>
+      <a href="https://github.com/arthurxavi" style="font-size: 12px; text-decoration: none; color: #0366d6;">@arthurxavi</a>
+    </div>
+
+    <div style="display: inline-block; text-align: center; margin: 5px;">
+      <a href="https://github.com/pedroguswander">
+        <img src="https://avatars.githubusercontent.com/u/168600233?v=4&s=32" width="32" height="32" alt="pedroguswander" />
+      </a>
+      <br>
+      <a href="https://github.com/pedroguswander" style="font-size: 12px; text-decoration: none; color: #0366d6;">@pedroguswander</a>
+    </div>
 <!-- /markdown-contributors -->
 
 ## Como usar?
