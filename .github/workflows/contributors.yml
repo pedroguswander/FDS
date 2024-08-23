@@ -28,10 +28,11 @@ jobs:
               }
             );
 
-            const contributorList = `<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            const contributorList = `
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
               ${contributors.map(
                 contributor => `
-                  <div style="text-align: center;">
+                  <div style="text-align: center; width: 100px;">
                     <a href="${contributor.html_url}" style="display: block;">
                       <img src="${contributor.avatar_url}&s=64" width="64" height="64" alt="${contributor.login}" style="border-radius: 50%;"/>
                     </a>
@@ -55,7 +56,10 @@ jobs:
             const startIndex = readmeText.indexOf(startMarker) + startMarker.length;
             const endIndex = readmeText.indexOf(endMarker);
 
-            const newReadmeText = `${readmeText.substring(0, startIndex)}\n${contributorList}\n${readmeText.substring(endIndex)}`;
+            // Escape any HTML characters that might interfere with Markdown rendering
+            const escapedContributorList = contributorList.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+            const newReadmeText = `${readmeText.substring(0, startIndex)}\n${escapedContributorList}\n${readmeText.substring(endIndex)}`;
 
             const newReadmeBuffer = Buffer.from(newReadmeText, 'utf-8');
 
