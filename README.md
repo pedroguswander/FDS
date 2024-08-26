@@ -1,4 +1,4 @@
-<h1 align="center">Seguros Cesar <img src="https://github.com/user-attachments/assets/47d54f58-3607-488c-9df2-8646c6bfe1fe" alt="Descrição da imagem" width="30"/></h1> 
+<h1 align="center">RiskAnalyzer <img src="https://github.com/user-attachments/assets/47d54f58-3607-488c-9df2-8646c6bfe1fe" alt="Descrição da imagem" width="30"/></h1> 
 
 Oferece uma solução personalizada para proteger o que é mais importante para você. Nosso aplicativo permite criar, gerenciar e ajustar suas apólices de seguro de acordo com suas necessidades e estilo de vida. Acompanhe seu histórico e veja o crescimento da sua proteção de forma prática e visual, garantindo que você tenha sempre a cobertura ideal.
 
@@ -8,7 +8,7 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 Python 3.6 ou superior.
 
 ## Links 
-
+https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/KAN/boards/1
 ## Configuração do ambiente
 
 ## 💻Tecnologias Utilizadas
@@ -19,5 +19,11 @@ Python 3.6 ou superior.
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ## 🙋‍♂️ Criado por:
 [Matheus Lustosa](https://github.com/MatheusLustosa)
+[Pedro Gusmão](https://github.com/pedroguswander)
+[Arthur Xavier](https://github.com/arthurxavi)
+[Felipe Andrade](https://github.com/felipeandrader)
+[Augusto Barbosa](https://github.com/Rodrigo-Guimaraes-P)
+[Rodrigo Guimarães](https://github.com/Augusto_X)
+
 
 
