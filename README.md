@@ -22,8 +22,7 @@ https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/KAN/boards/1
 [Pedro Gusmão](https://github.com/pedroguswander)
 [Arthur Xavier](https://github.com/arthurxavi)
 [Felipe Andrade](https://github.com/felipeandrader)
-[Augusto Barbosa](https://github.com/Rodrigo-Guimaraes-P)
-[Rodrigo Guimarães](https://github.com/AugustoBarbosa87)
-
+[Rodrigo Guimarães](https://github.com/Rodrigo-Guimaraes-P)
+[Augusto Barbosa](https://github.com/AugustoBarbosa87)
 
 
