@@ -1,4 +1,4 @@
-<h1 align="center">RiskAnalyzer <img src="https://github.com/user-attachments/assets/47d54f58-3607-488c-9df2-8646c6bfe1fe" alt="Descrição da imagem" width="30"/></h1> 
+<h1 align="center">AlphaTech Educacional <img src="https://github.com/user-attachments/assets/47d54f58-3607-488c-9df2-8646c6bfe1fe" alt="Descrição da imagem" width="30"/></h1> 
 
 Oferece uma solução personalizada para proteger o que é mais importante para você. Nosso aplicativo permite criar, gerenciar e ajustar suas apólices de seguro de acordo com suas necessidades e estilo de vida. Acompanhe seu histórico e veja o crescimento da sua proteção de forma prática e visual, garantindo que você tenha sempre a cobertura ideal.
 
@@ -8,7 +8,7 @@ Oferece uma solução personalizada para proteger o que é mais importante para 
 Python 3.6 ou superior.
 
 ## Links 
-https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/KAN/boards/1
+[Projeto - Jira](https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/AW/boards/5?atlOrigin=eyJpIjoiOGQyNjQxNmVlNzYxNDUzNmEwMDA5Y2Y4YTZiMmVkMmEiLCJwIjoiaiJ9)
 ## Configuração do ambiente
 
 ## Entregas
