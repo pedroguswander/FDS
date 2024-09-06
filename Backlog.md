@@ -1,1 +1,1 @@
-![Print backlog das histórias](C:\Users\Pedro Gusmão\Desktop\FDS - 2024.2\backlog_jira.png)
+![Print backlog das histórias](https://cdn.discordapp.com/attachments/1275962570271887444/1281684344670392402/image.png?ex=66dc9d10&is=66db4b90&hm=8391ce6aed1ee3e15009bdbadc13e59d898672999c83d192aed8c1efcb2b22a8&)
