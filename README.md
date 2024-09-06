@@ -11,6 +11,11 @@ Python 3.6 ou superior.
 https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/KAN/boards/1
 ## Configuração do ambiente
 
+## Entregas
+
+* Entrega 1
+    -  [Print do Backlog das histórias](Backlog.md)
+
 ## 💻Tecnologias Utilizadas
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
