@@ -17,6 +17,7 @@ Python 3.6 ou superior.
 * Entrega 1
     -  [Print do Backlog das histórias](Backlog.md)
     -  [Screencast do Protótipo Lo-Fi](https://youtu.be/NCyXO3E3Ow8)
+    -  [Protótipo Lo-Fi & Sketchboard - Figma](https://www.figma.com/design/7uEuFDZ5T9I2HeTYMGfnR9/FDS-Entrega-1?node-id=0-1&t=nimLCI6xdHeemn50-1)
 
 ## 💻Tecnologias Utilizadas
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
