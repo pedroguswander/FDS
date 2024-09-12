@@ -18,6 +18,7 @@ Python 3.6 ou superior.
     -  [Print do Backlog das histórias](Backlog.md)
     -  [Screencast do Protótipo Lo-Fi](https://youtu.be/NCyXO3E3Ow8)
     -  [Protótipo Lo-Fi & Sketchboard - Figma](https://www.figma.com/design/7uEuFDZ5T9I2HeTYMGfnR9/FDS-Entrega-1?node-id=0-1&t=nimLCI6xdHeemn50-1)
+    -  [ Quadro da Sprint 1 inicializada](https://cdn.discordapp.com/attachments/1275962570271887444/1283840618782654509/image.png?ex=66e47540&is=66e323c0&hm=75cb0007c72ad8d36ca564d8eff4ce8be67d50b97d4006e9b1c218ebdcb41fea&)
 
 ## 💻Tecnologias Utilizadas
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
