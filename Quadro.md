@@ -1,1 +1,1 @@
-![Quadro - Sprint 1](https://cdn.discordapp.com/attachments/1275962570271887444/1283840618782654509/image.png?ex=66e47540&is=66e323c0&hm=75cb0007c72ad8d36ca564d8eff4ce8be67d50b97d4006e9b1c218ebdcb41fea&)
+![Quadro - Sprint 1](https://media.discordapp.net/attachments/1275962570271887444/1283853282602651729/image.png?ex=66e4810b&is=66e32f8b&hm=1bcae39a2e9952c55b9fdf24115278e17d45a6d20ffda7e01a1a7bdb32dd7a3f&=&format=webp&quality=lossless&width=1296&height=662)
