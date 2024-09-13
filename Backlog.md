@@ -1,1 +1,1 @@
-![Print backlog das histórias](https://cdn.discordapp.com/attachments/1275962570271887444/1282372717315887195/image.png?ex=66df1e29&is=66ddcca9&hm=b593bd4ec9acd58b5cc27174473baa45f541a72225345b599b18d7a979330867&)
+![Print backlog das histórias](https://media.discordapp.net/attachments/1275962570271887444/1284135593164542085/image.png?ex=66e587f7&is=66e43677&hm=1f61a46629e0ba2f5a481258081aa0f97c92c2d3e81692cd39140efcfcfa1383&=&format=webp&quality=lossless&width=1440&height=332)
