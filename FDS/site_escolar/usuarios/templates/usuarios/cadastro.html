@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,7 +37,14 @@
             margin-bottom: 5px;
             color: #555;
         }
-        input[type="text"], input[type="password"] {
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -45,7 +52,7 @@
             box-sizing: border-box;
         }
         button {
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             border: none;
             padding: 10px;
@@ -54,50 +61,36 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #0056b3;
-        }
-        .error {
-            color: red;
-            margin-bottom: 15px;
-        }
-        .signup-link {
-            margin-top: 10px;
-            text-align: center;
-        }
-        .signup-link a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .signup-link a:hover {
-            text-decoration: underline;
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
-        {% if form.non_field_errors %}
-            <div class="error">
-                {% for error in form.non_field_errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
+        <h2>Cadastro</h2>
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                {{ form.username.label_tag }}
-                {{ form.username }}
+                <label for="matricula">Matrícula</label>
+                <input type="text" id="matricula" name="matricula" required>
             </div>
             <div class="form-group">
-                {{ form.password.label_tag }}
-                {{ form.password }}
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
             </div>
-            <button type="submit">Entrar</button>
+            <div class="form-group">
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_usuario">Você é:</label>
+                <select id="tipo_usuario" name="tipo_usuario" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                </select>
+            </div>
+            <button type="submit">Cadastrar</button>
         </form>
-        <div class="signup-link">
-            <p>Se ainda não é usuário, <a href="{% url 'cadastro' %}">cadastre-se</a></p>
-        </div>
     </div>
 </body>
 </html>
