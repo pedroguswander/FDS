@@ -93,7 +93,9 @@
                 {{ form.password.label_tag }}
                 {{ form.password }}
             </div>
-            <button type="submit">Entrar</button>
+            <a href="{% url 'home' %}">
+                <button type="submit">Entrar</button>
+            </a>
         </form>
         <div class="signup-link">
             <p>Se ainda não é usuário, <a href="{% url 'cadastro' %}">cadastre-se</a></p>

@@ -28,3 +28,9 @@ def cadastro_view(request):
 
         return redirect('login')  # Redireciona para a página de login após o cadastro
     return render(request, 'usuarios/cadastro.html')
+
+def home_view(request) :
+    return render(request, 'usuarios/home.html')
+
+def documentos_view(request) :
+     return render(request, 'usuarios/documentos.html')
