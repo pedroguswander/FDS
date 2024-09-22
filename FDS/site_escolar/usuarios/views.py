@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
 from .models import Usuario
+from .models import Documento
 
 
 def login_view(request):
@@ -33,4 +34,6 @@ def home_view(request) :
     return render(request, 'usuarios/home.html')
 
 def documentos_view(request) :
-     return render(request, 'usuarios/documentos.html')
+     documentos = Documento.objects.all()
+     context = {"documentos" : documentos}
+     return render(request, 'usuarios/documentos.html', context)

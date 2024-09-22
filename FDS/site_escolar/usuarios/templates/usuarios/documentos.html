@@ -1,1 +1,13 @@
 <h1>Documentos</h1>
+
+    <ul>
+
+        {% for documento in documentos %}
+                <li>
+                    <a href="{{ documento.arquivo.url }}" target="_blank">{{ documento }}</a>
+                </li>
+        {% empty %}
+
+        {% endfor %}
+
+    </ul>

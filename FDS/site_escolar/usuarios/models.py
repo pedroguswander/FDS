@@ -14,3 +14,10 @@ class Usuario(models.Model):
     def __str__(self):
         return f"{self.nome} ({self.tipo_usuario})"
 
+class Documento(models.Model) :
+    documento = models.CharField(max_length=50)
+    arquivo = models.ImageField(blank=True)
+
+    def __str__(self) :
+        return self.documento
+
