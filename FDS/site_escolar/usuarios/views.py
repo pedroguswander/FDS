@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from .forms import LoginForm
 from .models import Usuario
 from .models import Documento
+from .models import Solicitacao
+from .forms import SolicitacaoForm
+from django.contrib import messages
 
 
 def login_view(request):
@@ -37,3 +40,20 @@ def documentos_view(request) :
      documentos = Documento.objects.all()
      context = {"documentos" : documentos}
      return render(request, 'usuarios/documentos.html', context)
+
+def notificacoes(request):
+    solicitacoes = Solicitacao.objects.filter(aluno=request.user).order_by('-data_solicitacao')
+    return render(request, 'usuarios/notificacoes.html', {'solicitacoes': solicitacoes})
+
+def nova_solicitacao(request):
+    if request.method == 'POST':
+        form = SolicitacaoForm(request.POST)
+        if form.is_valid():
+            solicitacao = form.save(commit=False)
+            solicitacao.aluno = request.user
+            solicitacao.save()
+            return redirect('notificacoes')
+    else:
+        form = SolicitacaoForm()
+    
+    return render(request, 'usuarios/nova_solicitacao.html', {'form': form})

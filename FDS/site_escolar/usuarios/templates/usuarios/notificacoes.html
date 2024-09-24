@@ -1,0 +1,14 @@
+<h1>Notificações</h1>
+
+{% if solicitacoes %}
+    <h2>Histórico de Solicitações</h2>
+    <ul>
+        {% for solicitacao in solicitacoes %}
+            <li>{{ solicitacao.tipo_servico }} - {{ solicitacao.data_solicitacao }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Você ainda não fez nenhuma solicitação.</p>
+{% endif %}
+
+<a href="{% url 'nova_solicitacao' %}">Nova Solicitação</a>

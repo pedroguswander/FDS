@@ -1,0 +1,9 @@
+<h1>Nova Solicitação</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar Solicitação</button>
+</form>
+
+<a href="{% url 'notificacoes' %}">Voltar para Notificações</a>
