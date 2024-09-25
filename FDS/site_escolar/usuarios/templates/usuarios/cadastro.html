@@ -37,14 +37,7 @@
             margin-bottom: 5px;
             color: #555;
         }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        select {
+        input[type="text"], input[type="password"], input[type="number"], select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -52,7 +45,7 @@
             box-sizing: border-box;
         }
         button {
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             padding: 10px;
@@ -61,38 +54,66 @@
             font-size: 16px;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-bottom: 15px;
+        }
+        .signup-link {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Cadastro</h2>
+        {% if form.non_field_errors %}
+            <div class="error">
+                {% for error in form.non_field_errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                <label for="matricula">Matrícula</label>
-                <input type="text" id="matricula" name="matricula" required>
+                {{ form.matricula.label_tag }}
+                {{ form.matricula }}
             </div>
             <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required>
+                {{ form.nome.label_tag }}
+                {{ form.nome }}
             </div>
             <div class="form-group">
-                <label for="idade">Idade</label>
-                <input type="number" id="idade" name="idade" required>
+                {{ form.idade.label_tag }}
+                {{ form.idade }}
             </div>
             <div class="form-group">
-                <label for="tipo_usuario">Você é:</label>
-                <select id="tipo_usuario" name="tipo_usuario" required>
-                    <option value="aluno">Aluno</option>
-                    <option value="professor">Professor</option>
-                </select>
+                {{ form.tipo_usuario.label_tag }}
+                {{ form.tipo_usuario }}
             </div>
-            <a href="{% url 'login' %}">
-                    <button type="submit" >Cadastrar</button>
-            </a>
+            <div class="form-group">
+                {{ form.senha.label_tag }}
+                {{ form.senha }}
+            </div>
+            <div class="form-group">
+                {{ form.confirmar_senha.label_tag }}
+                {{ form.confirmar_senha }}
+            </div>
+            <button type="submit">Cadastrar</button>
         </form>
+        <div class="signup-link">
+            <p>Já tem uma conta? <a href="{% url 'login' %}">Faça login</a></p>
+        </div>
     </div>
 </body>
 </html>
