@@ -68,19 +68,39 @@ def documentos_view(request) :
      context = {"documentos" : documentos}
      return render(request, 'usuarios/documentos.html', context)
 
+from django.shortcuts import render
+from .models import Solicitacao, Usuario
+
 def notificacoes(request):
-    solicitacoes = Solicitacao.objects.filter(aluno=request.user).order_by('-data_solicitacao')
+    try:
+
+        matricula = request.GET.get('matricula')
+        usuario = Usuario.objects.get(matricula=matricula)
+        solicitacoes = Solicitacao.objects.filter(aluno=usuario)
+    except Usuario.DoesNotExist:
+        solicitacoes = []
+    
     return render(request, 'usuarios/notificacoes.html', {'solicitacoes': solicitacoes})
 
 def nova_solicitacao(request):
     if request.method == 'POST':
         form = SolicitacaoForm(request.POST)
         if form.is_valid():
+            try:
+
+                matricula = request.POST.get('matricula')
+                usuario = Usuario.objects.get(matricula=matricula)
+            except Usuario.DoesNotExist:
+                messages.error(request, "Aluno não encontrado.")
+                return redirect('nova_solicitacao')
+            
             solicitacao = form.save(commit=False)
-            solicitacao.aluno = request.user
+            solicitacao.aluno = usuario
             solicitacao.save()
             return redirect('notificacoes')
     else:
         form = SolicitacaoForm()
-    
+
     return render(request, 'usuarios/nova_solicitacao.html', {'form': form})
+
+

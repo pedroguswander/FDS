@@ -1,9 +1,19 @@
-<h1>Nova Solicitação</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova Solicitação</title>
+</head>
+<body>
+    <h2>Nova Solicitação de Serviço</h2>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Enviar Solicitação</button>
-</form>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" required><br>
+    
+        {{ form.as_p }}    
+        <button type="submit">Enviar Solicitação</button>
+    </form>
+</body>
+</html>
 
-<a href="{% url 'notificacoes' %}">Voltar para Notificações</a>

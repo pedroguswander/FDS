@@ -1,14 +1,20 @@
 <h1>Notificações</h1>
 
+<h2>Histórico de Solicitações</h2>
+
 {% if solicitacoes %}
-    <h2>Histórico de Solicitações</h2>
     <ul>
-        {% for solicitacao in solicitacoes %}
-            <li>{{ solicitacao.tipo_servico }} - {{ solicitacao.data_solicitacao }}</li>
-        {% endfor %}
+    {% for solicitacao in solicitacoes %}
+        <li>
+            <strong>Serviço:</strong> {{ solicitacao.get_tipo_servico_display }}<br>
+            <strong>Data da Solicitação:</strong> {{ solicitacao.data_solicitacao|date:"d/m/Y H:i" }}<br>
+            <strong>Motivo:</strong> {{ solicitacao.motivo }}<br>
+            <strong>Descrição:</strong> {{ solicitacao.descricao }}<br>
+        </li>
+    {% endfor %}
     </ul>
 {% else %}
-    <p>Você ainda não fez nenhuma solicitação.</p>
+    <p>Você ainda não tem solicitações.</p>
 {% endif %}
 
 <a href="{% url 'nova_solicitacao' %}">Nova Solicitação</a>
