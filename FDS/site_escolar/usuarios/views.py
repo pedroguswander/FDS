@@ -8,7 +8,9 @@ from .forms import SolicitacaoForm
 from django.contrib import messages
 from .forms import CadastroForm
 from django.contrib.auth.hashers import make_password
-
+from .models import Evento
+import calendar
+from datetime import datetime
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(data=request.POST)
@@ -84,3 +86,24 @@ def nova_solicitacao(request):
         form = SolicitacaoForm()
     
     return render(request, 'usuarios/nova_solicitacao.html', {'form': form})
+from django.shortcuts import render
+from django.utils import timezone
+from .models import Evento
+import calendar
+
+def calendario_view(request):
+    agora = datetime.now()
+    ano = datetime.now().year
+    mes = datetime.now().month
+
+    # Criar um calendário para o mês atual
+    cal = calendar.Calendar(firstweekday=0)
+    dias = cal.monthdayscalendar(ano, mes)
+    return render(request, 'calendario.html', {
+        'dias': dias,
+        'mes_nome': calendar.month_name[mes],
+        'ano': ano,
+    })
+def nova_solicitacao_view(request):
+    # Lógica para a página de nova solicitação
+    return render(request, 'nova_solicitacao.html')

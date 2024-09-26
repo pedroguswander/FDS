@@ -11,7 +11,7 @@ urlpatterns = [
     path('documentos/', documentos_view, name='documentos'),
     path('notificacoes/', notificacoes, name='notificacoes'),
     path('nova-solicitacao/', nova_solicitacao, name='nova_solicitacao'),
- 
+    path('calendario/', views.calendario_view, name='calendario'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
