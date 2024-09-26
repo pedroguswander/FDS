@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 class Usuario(models.Model):
     TIPO_USUARIO_CHOICES = [
         ('aluno', 'Aluno'),
@@ -41,3 +41,18 @@ class Solicitacao(models.Model):
 
     def __str__(self):
         return f'{self.tipo_servico} - {self.aluno.username}'
+
+class Evento(models.Model):
+    SERVIÇOS = [
+        ('aula', 'Aula'),
+        ('reunião', 'Reunião'),
+        ('prova', 'Prova'),
+    ]
+    
+    data = models.DateField()
+    descricao = models.CharField(max_length=255)
+    tipo_servico = models.CharField(max_length=20, choices=SERVIÇOS)
+    aluno = models.ForeignKey(User, on_delete=models.CASCADE, related_name='eventos')
+
+    def __str__(self):
+        return f'{self.data} - {self.descricao}'
