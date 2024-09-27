@@ -36,7 +36,6 @@ class SolicitacaoForm(forms.ModelForm):
         model = Solicitacao
         fields = [ 'tipo_servico', 'motivo', 'descricao']
         widgets = {
-            'aluno': forms.Select(attrs={'class': 'form-control'}),
             'tipo_servico': forms.Select(attrs={'class': 'form-control'}),
             'motivo': forms.TextInput(attrs={'class': 'form-control'}),
             'descricao': forms.Textarea(attrs={'class': 'form-control'}),
