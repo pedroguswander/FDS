@@ -51,8 +51,11 @@ class Evento(models.Model):
     
     data = models.DateField()
     descricao = models.CharField(max_length=255)
-    tipo_servico = models.CharField(max_length=20, choices=SERVIÇOS)
-    aluno = models.ForeignKey(User, on_delete=models.CASCADE, related_name='eventos')
+    tipo_servico = models.CharField(max_length=20, choices=SERVIÇOS,null=True)
+    aluno = models.ForeignKey(User, on_delete=models.CASCADE, related_name='eventos',null=True)
 
     def __str__(self):
         return f'{self.data} - {self.descricao}'
+    
+
+    
