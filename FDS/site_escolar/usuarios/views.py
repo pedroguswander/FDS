@@ -62,47 +62,106 @@ def cadastro_view(request):
 
     return render(request, 'usuarios/cadastro.html', {'form': form})
 
+import calendar
+
 def home_view(request) :
-    return render(request, 'usuarios/home.html')
+    mes = datetime.now().month
+    context = {'mes': mes }
+    return render(request, 'usuarios/home.html', context)
 
 def documentos_view(request) :
      documentos = Documento.objects.all()
      context = {"documentos" : documentos}
      return render(request, 'usuarios/documentos.html', context)
 
+from django.shortcuts import render
+from .models import Solicitacao, Usuario
+
 def notificacoes(request):
-    solicitacoes = Solicitacao.objects.filter(aluno=request.user).order_by('-data_solicitacao')
+    matricula = request.user.username  # Ajuste para obter a matrícula do usuário logado
+    try:
+
+        # matricula = request.GET.get('matricula')
+        usuario = Usuario.objects.get(matricula=matricula)
+        solicitacoes = Solicitacao.objects.filter(aluno=usuario).order_by('-data_solicitacao')
+    except Usuario.DoesNotExist:
+        solicitacoes = []
+    
     return render(request, 'usuarios/notificacoes.html', {'solicitacoes': solicitacoes})
 
 def nova_solicitacao(request):
-    if request.method == 'POST':
-        form = SolicitacaoForm(request.POST)
-        if form.is_valid():
-            solicitacao = form.save(commit=False)
-            solicitacao.aluno = request.user
-            solicitacao.save()
-            return redirect('notificacoes')
+    form = SolicitacaoForm(request.POST or None)
+    
+    if form.is_valid():
+        try:
+            matricula = request.POST.get('matricula', '')
+            usuario = Usuario.objects.get(matricula=matricula)
+        except Usuario.DoesNotExist:
+            messages.error(request, "Aluno não encontrado.")
+            return redirect('nova_solicitacao')
+
+        solicitacao = form.save(commit=False)
+        solicitacao.aluno = usuario
+        solicitacao.save()
+        return redirect('notificacoes')
     else:
         form = SolicitacaoForm()
-    
     return render(request, 'usuarios/nova_solicitacao.html', {'form': form})
+
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Evento
 import calendar
 
-def calendario_view(request):
+def calendario_view(request, troca_mes):
+    if request.method == 'POST' :
+
+        if request.POST.get('troca_mes') == 'mes-posterior' :
+            troca_mes = int(troca_mes)+1
+            if troca_mes == 13 :
+                troca_mes = 1
+
+        elif request.POST.get('troca_mes') == 'mes-anterior' :
+            troca_mes = int(troca_mes)-1
+            if troca_mes == 0 :
+                troca_mes = 12
+        else:
+
+            data = request.POST.get('data')
+            descricao = request.POST.get('descricao')
+
+            evento = Evento(
+                data = data,
+                descricao = descricao,
+                tipo_servico = "texto",
+                aluno = request.user
+            )
+
+            evento.save()
+
+        return redirect('calendario', str(troca_mes))
+    
     agora = datetime.now()
     ano = datetime.now().year
-    mes = datetime.now().month
+    mes = int(troca_mes)
 
-    # Criar um calendário para o mês atual
+    # Criar um calendário para o mês atual   
     cal = calendar.Calendar(firstweekday=0)
-    dias = cal.monthdayscalendar(ano, mes)
+    dias = cal.monthdayscalendar(ano,mes)
+
+    eventos = Evento.objects.all()
+    for evento in eventos :
+        data_evento = str(evento.data).split("-")
+        evento.mes = int(data_evento[1])
+        evento.dia = int(data_evento[2])
+
     return render(request, 'calendario.html', {
         'dias': dias,
         'mes_nome': calendar.month_name[mes],
         'ano': ano,
+        'eventos': eventos,
+        'troca_mes' : str(troca_mes),
+        'mes' : mes,
     })
 def nova_solicitacao_view(request):
     # Lógica para a página de nova solicitação

@@ -31,11 +31,14 @@ class CadastroForm(forms.ModelForm):
         return cleaned_data
 
 class SolicitacaoForm(forms.ModelForm):
+    matricula = forms.CharField(max_length=20, required=True)
     class Meta:
         model = Solicitacao
-        fields = ['tipo_servico', 'motivo', 'descricao']
+        fields = [ 'tipo_servico', 'motivo', 'descricao']
         widgets = {
-            'descricao': forms.Textarea(attrs={'rows': 4}),
+            'tipo_servico': forms.Select(attrs={'class': 'form-control'}),
+            'motivo': forms.TextInput(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
     def clean(self):
@@ -46,11 +49,3 @@ class SolicitacaoForm(forms.ModelForm):
         # Validação 1: Campos obrigatórios
         if not motivo or not descricao:
             raise forms.ValidationError("Todos os campos obrigatórios devem ser preenchidos.")
-
-        # Validação 2: Verificar horário de funcionamento
-        hora_atual = timezone.now().time()
-        inicio_funcionamento = datetime.time(8, 0)  # 08:00
-        fim_funcionamento = datetime.time(18, 0)  # 18:00
-
-        if hora_atual < inicio_funcionamento or hora_atual > fim_funcionamento:
-            raise forms.ValidationError("As solicitações só podem ser feitas entre 08:00 e 18:00.")
