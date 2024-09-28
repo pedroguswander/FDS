@@ -10,14 +10,14 @@ load_dotenv(BASE_DIR / '.env')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-TARGET_ENV = os.getenv('TARGET_ENV')
+TARGET_ENV = 'django-insecure-b5in^p8(qi=9gm+s-)s7f$w9xpqnczel*vm53d+wywrz$6y(r#'
 NOT_PROD = not TARGET_ENV.lower().startswith('prod')
 
 if NOT_PROD:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
     # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = os.getenv('SECRET_KEY')
+    SECRET_KEY = 'django-insecure-b5in^p8(qi=9gm+s-)s7f$w9xpqnczel*vm53d+wywrz$6y(r#'
     ALLOWED_HOSTS = []
     DATABASES = {
         'default': {
