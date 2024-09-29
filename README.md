@@ -58,7 +58,7 @@ Issues/ Bug Taacker:
 
 Print do Backlog do Projeto:
 checar AE-6
-![Backlog](imgdump2/backlog-entrega-2-(1).png)
+![Backlog](imgdump2/backlog-entrega-2-(2).png)
 
 Print do Quadro da Sprint:
 ![Sprint](imgdump2/sprint-entrega-2-(1).png)
