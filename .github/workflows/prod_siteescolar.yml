@@ -41,6 +41,8 @@ jobs:
           ls -la
           cd site_escolar
           ls -la
+          cd site_escolar
+          ls -la
           rm db.sqlite3
           rm .env
           cd..
