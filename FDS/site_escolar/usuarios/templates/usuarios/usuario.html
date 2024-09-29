@@ -134,38 +134,39 @@
                     <span class="navbar-brand hamburger" id="menu-toggle">&#9776;</span>
                 </div>
             </nav>
-             <div class="container-fluid">
-                <h1 class="mt-4">Nova Solicitação</h1>
-                <form method="POST">
-                    {% csrf_token %}
+            <div class="container-fluid">
+                <h1 class="mt-4">Perfil do Aluno</h1>
+                <form method="get">
                     <div class="mb-3">
                         <label for="matricula">Matrícula:</label>
-                        <input type="text" id="matricula" name="matricula" required class="form-control">
+                        <input type="text" id="matricula" name="matricula" placeholder="Digite a matrícula" required class="form-control">
                     </div>
-                    <div class="mb-3">
-                        <label for="tipo_servico">Tipo de Serviço:</label>
-                        <select name="tipo_servico" id="tipo_servico" required class="form-control">
-                            <option value="turma">Trocar de Turma</option>
-                            <option value="matricula">Declaração de Matrícula</option>
-                            <option value="irpf">Declaração de Imposto de Renda</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="motivo">Motivo:</label>
-                        <input type="text" id="motivo" name="motivo" required class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="descricao">Descrição:</label>
-                        <textarea id="descricao" name="descricao" required class="form-control"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-custom">Enviar Solicitação</button>
-                    <a href="{% url 'notificacoes' %}" class="btn btn-custom">Voltar para Notificações</a>
+                    <button type="submit" class="btn btn-custom">Buscar</button>
                     <a href="{% url 'home' %}" class="btn btn-principal">Página Principal</a>
                 </form>
-                
-            </div>            
-
+        
+                {% if usuario %}
+                    <h1>Nome: {{ usuario.nome }}</h1>
+                    <ul>
+                        <h2>Dados pessoais:</h2>
+                        <li>Matrícula: {{ usuario.matricula }}</li>
+                        <li>Idade: {{ usuario.idade }}</li>
+                        <li>Tipo de usuário: {{ usuario.tipo_usuario }}</li>
+                        <li>Curso: {{ usuario.curso }}</li>
+                        <li>Endereço: {{ usuario.endereco }}</li>
+                        <li>Período de ingresso: {{ usuario.periodo_ingresso }}</li>
+                    </ul>
+                {% elif error_message %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error_message }}
+                    </div>
+                {% endif %}
+            </div>
         </div>
+        </form>
+    </div>
+
+    </div>
     </div>
 
     <!-- Bootstrap JS -->
@@ -179,4 +180,3 @@
 </body>
 
 </html>
->>>>>>> 39900f4fdcd681356a53290093b7ace8a86d6947

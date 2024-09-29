@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 150vh;
             margin: 0;
         }
         .container {
@@ -86,28 +86,64 @@
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                {{ form.matricula.label_tag }}
-                {{ form.matricula }}
+                <!--{{ form.matricula.label_tag }}
+                {{ form.matricula }}-->
+                <p>Matricula:</p>
+                <input type="text" name="matricula" required>
             </div>
             <div class="form-group">
-                {{ form.nome.label_tag }}
-                {{ form.nome }}
+                <!--{{ form.nome.label_tag }}
+                {{ form.nome }}-->
+                <p>Nome:</p>
+                <input type="text" name="nome" required>
             </div>
             <div class="form-group">
-                {{ form.idade.label_tag }}
-                {{ form.idade }}
+                <!--{{ form.idade.label_tag }}
+                {{ form.idade }}-->
+                <p>Idade:</p>
+                <input type="number" name="idade" required>
             </div>
             <div class="form-group">
-                {{ form.tipo_usuario.label_tag }}
-                {{ form.tipo_usuario }}
+                <!--{{ form.tipo_usuario.label_tag }}
+                {{ form.tipo_usuario }}-->
+                <p>Tipo usuario:</p>
+                <select name="tipo_usuario" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                </select>
             </div>
             <div class="form-group">
-                {{ form.senha.label_tag }}
-                {{ form.senha }}
+                <p>Curso:</p>
+                <input type="text" name="curso" required>
             </div>
             <div class="form-group">
-                {{ form.confirmar_senha.label_tag }}
-                {{ form.confirmar_senha }}
+                <!--{{ form.senha.label_tag }}
+                {{ form.senha }}-->
+                <p>Endereço:</p>
+                <input type="text" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <!--{{ form.tipo_usuario.label_tag }}
+                {{ form.tipo_usuario }}-->
+                <p>Período de Ingresso:</p>
+                <select name="periodo_ingresso" required>
+                    <option value="2024.2">2024.2</option>
+                    <option value="2024.1">2024.1</option>
+                    <option value="2023.2">2023.2</option>
+                    <option value="2023.1">2023.1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <!--{{ form.confirmar_senha.label_tag }}
+                {{ form.confirmar_senha }}-->
+                <p>Senha:</p>
+                <input type="password" name="senha" required>
+            </div>
+            <div class="form-group">
+                <!--{{ form.confirmar_senha.label_tag }}
+                {{ form.confirmar_senha }}-->
+                <p>Confirmar senha:</p>
+                <input type="password" name="confirmar_senha" required>
             </div>
             <button type="submit">Cadastrar</button>
         </form>
