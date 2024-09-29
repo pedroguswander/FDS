@@ -33,7 +33,7 @@ jobs:
       - name: List files in the current directory
         run: ls -la
       - name: Install dependencies
-        run: pip install -r FDS/requirements.txt
+        run: pip install -r FDS/site_escolar/requirements.txt
         
       - name: Cleaning testing files
         run: |
