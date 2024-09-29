@@ -144,20 +144,25 @@
                     </div>
                     <div class="mb-3">
                         <label for="tipo_servico">Tipo de Serviço:</label>
-                        {{ form.tipo_servico }} <!-- Renderiza o campo -->
+                        <select name="tipo_servico" id="tipo_servico" required class="form-control">
+                            <option value="turma">Trocar de Turma</option>
+                            <option value="matricula">Declaração de Matrícula</option>
+                            <option value="irpf">Declaração de Imposto de Renda</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="motivo">Motivo:</label>
-                        {{ form.motivo }} <!-- Renderiza o campo -->
+                        <input type="text" id="motivo" name="motivo" required class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="descricao">Descrição:</label>
-                        {{ form.descricao }} <!-- Renderiza o campo -->
+                        <textarea id="descricao" name="descricao" required class="form-control"></textarea>
                     </div>
                     <button type="submit" class="btn btn-custom">Enviar Solicitação</button>
                     <a href="{% url 'notificacoes' %}" class="btn btn-custom">Voltar para Notificações</a>
                     <a href="{% url 'home' %}" class="btn btn-principal">Página Principal</a>
                 </form>
+                
             </div>            
 
         </div>

@@ -30,23 +30,3 @@ class CadastroForm(forms.ModelForm):
 
         return cleaned_data
 
-class SolicitacaoForm(forms.ModelForm):
-    matricula = forms.CharField(max_length=20, required=True)
-    class Meta:
-        model = Solicitacao
-        fields = [ 'tipo_servico', 'motivo', 'descricao']
-        widgets = {
-            'tipo_servico': forms.Select(attrs={'class': 'form-control'}),
-            'motivo': forms.TextInput(attrs={'class': 'form-control'}),
-            'descricao': forms.Textarea(attrs={'class': 'form-control'}),
-        }
-
-
-    def clean(self):
-        cleaned_data = super().clean()
-        motivo = cleaned_data.get('motivo')
-        descricao = cleaned_data.get('descricao')
-
-        # Validação 1: Campos obrigatórios
-        if not motivo or not descricao:
-            raise forms.ValidationError("Todos os campos obrigatórios devem ser preenchidos.")

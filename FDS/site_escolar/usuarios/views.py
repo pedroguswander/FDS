@@ -4,7 +4,6 @@ from .forms import LoginForm
 from .models import Usuario
 from .models import Documento
 from .models import Solicitacao
-from .forms import SolicitacaoForm
 from django.contrib import messages
 from .forms import CadastroForm
 from django.contrib.auth.hashers import make_password
@@ -92,23 +91,31 @@ def notificacoes(request):
     return render(request, 'usuarios/notificacoes.html', {'solicitacoes': solicitacoes})
 
 def nova_solicitacao(request):
-    form = SolicitacaoForm(request.POST or None)
-    
-    if form.is_valid():
+    if request.method == 'POST':
+        matricula = request.POST.get('matricula', '')
+        tipo_servico = request.POST.get('tipo_servico', '')
+        motivo = request.POST.get('motivo', '')
+        descricao = request.POST.get('descricao', '')
+
+        if not matricula or not tipo_servico or not motivo or not descricao:
+            messages.error(request, "Todos os campos são obrigatórios.")
+            return render(request, 'usuarios/nova_solicitacao.html')
+
         try:
-            matricula = request.POST.get('matricula', '')
             usuario = Usuario.objects.get(matricula=matricula)
         except Usuario.DoesNotExist:
             messages.error(request, "Aluno não encontrado.")
-            return redirect('nova_solicitacao')
+            return render(request, 'usuarios/nova_solicitacao.html')
 
-        solicitacao = form.save(commit=False)
-        solicitacao.aluno = usuario
-        solicitacao.save()
+        Solicitacao.objects.create(
+            aluno=usuario,
+            tipo_servico=tipo_servico,
+            motivo=motivo,
+            descricao=descricao
+        )
         return redirect('notificacoes')
-    else:
-        form = SolicitacaoForm()
-    return render(request, 'usuarios/nova_solicitacao.html', {'form': form})
+
+    return render(request, 'usuarios/nova_solicitacao.html')
 
 from django.shortcuts import render
 from django.utils import timezone
