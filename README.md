@@ -21,6 +21,7 @@ Python 3.6 ou superior.
     -  [ Quadro da Sprint 1 inicializada](Quadro.md)
 
  * Entrega 2
+   Links:
    <ul>
   <li>
     <a  href="https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/AW/boards/5?atlOrigin=eyJpIjoiOGQyNjQxNmVlNzYxNDUzNmEwMDA5Y2Y4YTZiMmVkMmEiLCJwIjoiaiJ9"
@@ -49,8 +50,9 @@ Deployment das histórias produzidas:
 Instruções de Acesso:
 
 Diagrama de Atividade do Sistema:
+![Diagrama](imgdump2/diagrama-entrega-2-(1).png)
 
-Issues/ Bug Taacker:
+Issues/ Bug Tracker:
 
  - Issues em Aberto:
 
@@ -61,7 +63,7 @@ checar AE-6
 ![Backlog](imgdump2/backlog-entrega-2-(2).png)
 
 Print do Quadro da Sprint:
-![Sprint](imgdump2/sprint-entrega-2-(1).png)
+![Quadro da Sprint](imgdump2/sprint-entrega-2-(1).png)
 
 Relato da Programação em Par Experimentada:
 
