@@ -20,6 +20,51 @@ Python 3.6 ou superior.
     -  [Protótipo Lo-Fi & Sketchboard - Figma](https://www.figma.com/design/7uEuFDZ5T9I2HeTYMGfnR9/FDS-Entrega-1?node-id=0-1&t=nimLCI6xdHeemn50-1)
     -  [ Quadro da Sprint 1 inicializada](Quadro.md)
 
+ * Entrega 2
+   <ul>
+  <li>
+    <a  href="https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/AW/boards/5?atlOrigin=eyJpIjoiOGQyNjQxNmVlNzYxNDUzNmEwMDA5Y2Y4YTZiMmVkMmEiLCJwIjoiaiJ9"
+      >Projeto - Jira</a>
+  </li>
+    <li>
+    <a  href="https://www.figma.com/design/7uEuFDZ5T9I2HeTYMGfnR9/FDS-Entrega-1?node-id=0-1&t=nimLCI6xdHeemn50-1"
+      >Protótipo Lo-Fi & SketchBoard Figma</a>
+  </li>
+   <li>
+    <a  href=""
+      >Screencast - Entrega 02</a>
+  </li>
+</ul>
+<br/>
+
+Deployment das histórias produzidas:
+<ul>
+  <li>
+    <a  href=""
+      >Projeto na Azure</a>
+  </li>
+</ul>
+<br/>
+
+Instruções de Acesso:
+
+Diagrama de Atividade do Sistema:
+
+Issues/ Bug Taacker:
+
+ - Issues em Aberto:
+
+ - Issues Fechadas:
+
+Print do Backlog do Projeto:
+
+Print do Quadro da Sprint:
+
+Relato da Programação em Par Experimentada:
+
+
+
+
 ## 💻Tecnologias Utilizadas
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
