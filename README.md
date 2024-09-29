@@ -60,10 +60,10 @@ Issues/ Bug Tracker:
 
 Print do Backlog do Projeto:
 checar AE-6
-![Backlog](imgdump2/backlog-entrega-2-(2).png)
+![Backlog](imgdump2/backlog-entrega-2-(3).png)
 
 Print do Quadro da Sprint:
-![Quadro da Sprint](imgdump2/sprint-entrega-2-(1).png)
+![Quadro da Sprint](imgdump2/sprint-entrega-2-(2).png)
 
 Relato da Programação em Par Experimentada:
 
