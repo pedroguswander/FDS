@@ -61,6 +61,7 @@ checar AE-6
 ![Backlog](imgdump2/backlog-entrega-2-(1).png)
 
 Print do Quadro da Sprint:
+![Sprint](imgdump2/sprint-entrega-2-(1).png)
 
 Relato da Programação em Par Experimentada:
 
