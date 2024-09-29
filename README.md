@@ -57,6 +57,8 @@ Issues/ Bug Taacker:
  - Issues Fechadas:
 
 Print do Backlog do Projeto:
+checar AE-6
+![Backlog](imgdump2/backlog-entrega-2-(1).png)
 
 Print do Quadro da Sprint:
 
