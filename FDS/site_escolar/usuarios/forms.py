@@ -41,6 +41,7 @@ class SolicitacaoForm(forms.ModelForm):
             'descricao': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
+
     def clean(self):
         cleaned_data = super().clean()
         motivo = cleaned_data.get('motivo')

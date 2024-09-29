@@ -169,12 +169,21 @@ def calendario_view(request, troca_mes, troca_ano):
         'mes' : mes,
         'ano': ano,
     })
-def nova_solicitacao_view(request):
-    # Lógica para a página de nova solicitação
-    return render(request, 'nova_solicitacao.html')
 
-def usuario_view(request) :
-    pessoa = Usuario.objects.get(usuario= request.user)
-    context = {"usuario" : pessoa}
+from .models import Usuario
 
-    return render(request, 'usuarios/usuario.html', context)
+def usuario_view(request):
+    usuario = None
+    error_message = ''
+
+    if 'matricula' in request.GET:
+        matricula = request.GET['matricula']
+        if matricula:
+            try:
+                usuario = Usuario.objects.get(matricula=matricula)
+            except Usuario.DoesNotExist:
+                error_message = 'Usuário não encontrado.'
+        else:
+            error_message = 'Por favor, insira uma matrícula válida.'
+
+    return render(request, 'usuarios/usuario.html', {'usuario': usuario, 'error_message': error_message})
