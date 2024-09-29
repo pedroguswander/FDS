@@ -13,14 +13,13 @@ import calendar
 from datetime import datetime
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('home')     
-    else:
-        form = LoginForm()
-    return render(request, 'usuarios/login.html', {'form': form})
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        usuario = authenticate(request, username=username, password=password)
+        if usuario is not None:
+            login(request, usuario)
+            return redirect('home')
+    return render(request, 'usuarios/login.html')
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -29,16 +28,17 @@ from django.contrib import messages
 
 def cadastro_view(request):
     if request.method == 'POST':
-        form = CadastroForm(request.POST)
-        if form.is_valid():
-            matricula = form.cleaned_data['matricula']
-            nome = form.cleaned_data['nome']
-            idade = form.cleaned_data['idade']
-            tipo_usuario = form.cleaned_data['tipo_usuario']
-            senha = form.cleaned_data['senha']
-            confirmar_senha = form.cleaned_data['confirmar_senha']
+        matricula = request.POST.get('matricula')
+        nome = request.POST.get('nome')
+        idade = request.POST.get('idade')
+        tipo_usuario = request.POST.get('tipo_usuario')
+        curso = request.POST.get('curso')
+        endereco = request.POST.get('endereco')
+        periodo_ingresso = request.POST.get('periodo_ingresso')
+        senha = request.POST.get('senha')
+        confirmar_senha = request.POST.get('confirmar_senha')
 
-            if senha == confirmar_senha:
+        if senha == confirmar_senha:
                 # Cria o usuário no modelo User do Django
                 usuario = User.objects.create(
                     username=matricula,
@@ -51,22 +51,24 @@ def cadastro_view(request):
                     matricula=matricula,
                     nome=nome,
                     idade=idade,
-                    tipo_usuario=tipo_usuario
+                    tipo_usuario=tipo_usuario,
+                    curso=curso,
+                    endereco = endereco,
+                    periodo_ingresso = periodo_ingresso,
+                    usuario= usuario,
                 )
 
-                return redirect('login')  # Redireciona para a página de login após o cadastro
-            else:
-                form.add_error('confirmar_senha', 'As senhas não coincidem.')
-    else:
-        form = CadastroForm()
+                return redirect('login')
 
-    return render(request, 'usuarios/cadastro.html', {'form': form})
+    return render(request, 'usuarios/cadastro.html')
 
+    
 import calendar
 
 def home_view(request) :
     mes = datetime.now().month
-    context = {'mes': mes }
+    ano =  datetime.now().year
+    context = {'mes': mes, 'ano': ano }
     return render(request, 'usuarios/home.html', context)
 
 def documentos_view(request) :
@@ -113,17 +115,19 @@ from django.utils import timezone
 from .models import Evento
 import calendar
 
-def calendario_view(request, troca_mes):
+def calendario_view(request, troca_mes, troca_ano):
     if request.method == 'POST' :
 
         if request.POST.get('troca_mes') == 'mes-posterior' :
             troca_mes = int(troca_mes)+1
             if troca_mes == 13 :
+                troca_ano = int(troca_ano)+1
                 troca_mes = 1
 
         elif request.POST.get('troca_mes') == 'mes-anterior' :
             troca_mes = int(troca_mes)-1
             if troca_mes == 0 :
+                troca_ano = int(troca_ano)-1
                 troca_mes = 12
         else:
 
@@ -139,30 +143,38 @@ def calendario_view(request, troca_mes):
 
             evento.save()
 
-        return redirect('calendario', str(troca_mes))
+        return redirect('calendario', str(troca_mes), str(troca_ano))
     
     agora = datetime.now()
-    ano = datetime.now().year
+    ano = int(troca_ano)
     mes = int(troca_mes)
 
     # Criar um calendário para o mês atual   
     cal = calendar.Calendar(firstweekday=0)
     dias = cal.monthdayscalendar(ano,mes)
 
-    eventos = Evento.objects.all()
+    eventos = Evento.objects.filter(aluno = request.user)
     for evento in eventos :
         data_evento = str(evento.data).split("-")
         evento.mes = int(data_evento[1])
         evento.dia = int(data_evento[2])
+        evento.ano = int(data_evento[0])
 
     return render(request, 'calendario.html', {
         'dias': dias,
         'mes_nome': calendar.month_name[mes],
-        'ano': ano,
         'eventos': eventos,
         'troca_mes' : str(troca_mes),
+        'troca_ano' : str(troca_ano),
         'mes' : mes,
+        'ano': ano,
     })
 def nova_solicitacao_view(request):
     # Lógica para a página de nova solicitação
     return render(request, 'nova_solicitacao.html')
+
+def usuario_view(request) :
+    pessoa = Usuario.objects.get(usuario= request.user)
+    context = {"usuario" : pessoa}
+
+    return render(request, 'usuarios/usuario.html', context)

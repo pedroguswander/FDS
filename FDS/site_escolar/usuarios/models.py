@@ -6,10 +6,21 @@ class Usuario(models.Model):
         ('professor', 'Professor'),
     ]
 
+    INGRESSO_CHOICES = [
+        ('2024.2', '2024.2'),
+        ('2024.1', '2024.1'),
+        ('2023.2', '2023.2'),
+        ('2023.1', '2023.1'),
+    ]
+
     matricula = models.CharField(max_length=20, unique=True)
     nome = models.CharField(max_length=100)
     idade = models.IntegerField()
     tipo_usuario = models.CharField(max_length=9, choices=TIPO_USUARIO_CHOICES)
+    curso = models.CharField(max_length=50, null=True, default="2020.1")
+    endereco = models.CharField(max_length=50, null=True, default="não há registro")
+    periodo_ingresso = models.CharField(max_length=20, choices=INGRESSO_CHOICES, null=True, default="Não tenho")
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuario', null=True)
 
     def __str__(self):
         return f"{self.nome} ({self.tipo_usuario})"
