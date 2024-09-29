@@ -38,7 +38,9 @@ jobs:
       - name: Cleaning testing files
         run: |
           cd FDS
+          ls -la
           cd site_escolar
+          ls -la
           rm db.sqlite3
           rm .env
           cd..
