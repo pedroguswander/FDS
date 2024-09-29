@@ -50,7 +50,7 @@ Deployment das histórias produzidas:
 Instruções de Acesso:
 
 Diagrama de Atividade do Sistema:
-![Diagrama](imgdump2/diagrama-entrega-2-(2).png)
+![Diagrama](imgdump2/diagrama-entrega-2-(3).png)
 
 Issues/ Bug Tracker:
 
