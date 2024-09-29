@@ -21,7 +21,7 @@ Python 3.6 ou superior.
     -  [ Quadro da Sprint 1 inicializada](Quadro.md)
 
  * Entrega 2
-   Links:
+  <p>Links:</p>
    <ul>
   <li>
     <a  href="https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/AW/boards/5?atlOrigin=eyJpIjoiOGQyNjQxNmVlNzYxNDUzNmEwMDA5Y2Y4YTZiMmVkMmEiLCJwIjoiaiJ9"
