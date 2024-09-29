@@ -28,7 +28,8 @@ jobs:
           source venv/bin/activate
       - name: Check current directory
         run: pwd
-      
+      - name: List files in FDS directory
+        run: ls -la FDS
       - name: List files in the current directory
         run: ls -la
       - name: Install dependencies
