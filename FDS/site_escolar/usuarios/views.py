@@ -1,11 +1,9 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from .forms import LoginForm
 from .models import Usuario
 from .models import Documento
 from .models import Solicitacao
 from django.contrib import messages
-from .forms import CadastroForm
 from django.contrib.auth.hashers import make_password
 from .models import Evento
 import calendar
@@ -22,7 +20,6 @@ def login_view(request):
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .forms import CadastroForm
 from django.contrib import messages
 
 def cadastro_view(request):
