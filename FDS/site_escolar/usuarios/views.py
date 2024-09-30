@@ -88,6 +88,8 @@ def notificacoes(request):
     return render(request, 'usuarios/notificacoes.html', {'solicitacoes': solicitacoes})
 
 def nova_solicitacao(request):
+    mes = datetime.now().month
+    ano =  datetime.now().year
     if request.method == 'POST':
         matricula = request.POST.get('matricula', '')
         tipo_servico = request.POST.get('tipo_servico', '')
@@ -96,13 +98,13 @@ def nova_solicitacao(request):
 
         if not matricula or not tipo_servico or not motivo or not descricao:
             messages.error(request, "Todos os campos são obrigatórios.")
-            return render(request, 'usuarios/nova_solicitacao.html')
+            return render(request, 'usuarios/nova_solicitacao.html',context= {'mes': mes, 'ano' : ano})
 
         try:
             usuario = Usuario.objects.get(matricula=matricula)
         except Usuario.DoesNotExist:
             messages.error(request, "Aluno não encontrado.")
-            return render(request, 'usuarios/nova_solicitacao.html')
+            return render(request, 'usuarios/nova_solicitacao.html',context= {'mes': mes, 'ano' : ano})
 
         Solicitacao.objects.create(
             aluno=usuario,
@@ -112,7 +114,7 @@ def nova_solicitacao(request):
         )
         return redirect('notificacoes')
 
-    return render(request, 'usuarios/nova_solicitacao.html')
+    return render(request, 'usuarios/nova_solicitacao.html', context= {'mes': mes, 'ano' : ano})
 
 from django.shortcuts import render
 from django.utils import timezone
@@ -177,6 +179,8 @@ def calendario_view(request, troca_mes, troca_ano):
 from .models import Usuario
 
 def usuario_view(request):
+    mes = datetime.now().month
+    ano =  datetime.now().year
     usuario = None
     error_message = ''
 
@@ -190,4 +194,4 @@ def usuario_view(request):
         else:
             error_message = 'Por favor, insira uma matrícula válida.'
 
-    return render(request, 'usuarios/usuario.html', {'usuario': usuario, 'error_message': error_message})
+    return render(request, 'usuarios/usuario.html', {'usuario': usuario, 'error_message': error_message, 'mes' : mes, 'ano' : ano})
