@@ -40,10 +40,10 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd FDS/site_escolar/
+          cd FDS/
           zip release.zip ./* -r
           cd ..
-          mv FDS/site_escolar/release.zip .
+          mv FDS/release.zip .
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
