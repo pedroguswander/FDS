@@ -22,6 +22,7 @@ Python 3.6 ou superior.
 
  * Entrega 2
     - [Screencast - Entrega 2](https://youtu.be/Sw1efqT8uFA)
+    - [website azure deploy siteescolar](https://siteescolar-ccchgxgfe8gdfaf0.brazilsouth-01.azurewebsites.net/)
 
 Deployment das histórias produzidas:
 <ul>
