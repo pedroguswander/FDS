@@ -47,7 +47,7 @@ Deployment das histórias produzidas:
 </ul>
 <br/>
 
-Instruções de Acesso:
+**Instruções de Acesso:**
 
 Essa sessão descreve as funcionalidades disponíveis atualmente no menu de navegação do portal acadêmico da AlphaTech na Azure Websites, até o momento foram implementadas apenas histórias para alunos, portanto não será disponível visualizar as histórias para outros tipo de usuários (professores) .  A página inicial do site é o Login, onde é necessário por o nome de usuário e senha, se ainda não estiver cadastrado é possível clicar em "cadastre-se" para enviar suas informações de cadastro e criar seu perfil, serão necessárias informações como:
 - Matrícula
@@ -66,25 +66,43 @@ Ao cadastrar suas informações no banco de dados poderá prosseguir para a Home
 - Dados pessoais
 
 
-Ao pressionar Calendário, aparecerá o calendário anual, apartir de setembro de 2024, com eventos que o usuário poderá registrar e deixar salvo em seu calendário pessoal, como uma espécie de agenda, selecionando uma data, dando um título do evento e por fim clicando em "Registre um Novo Evento", para salvar essas informações no banco de dados e exibi-lo em seu Calendário. Também é possível navegar entres os meses.
+Ao pressionar "Calendário", aparecerá o calendário anual, apartir de setembro de 2024, com eventos que o usuário poderá registrar e deixar salvo em seu calendário pessoal, como uma espécie de agenda, selecionando uma data, dando um título do evento e por fim clicando em "Registre um Novo Evento", para salvar essas informações no banco de dados e exibi-lo em seu Calendário. Também é possível navegar entres os meses.
 
-Diagrama de Atividade do Sistema:
+Ao pressionar "serviços", o usuário será direcionado para uma pagina com 4 campos: 
+- Matrícula: O campo deve ser preenchido com a matrícula do usuário;
+- Tipo de Serviço: O usuário deverá selecionar uma das opções de serviço: trocar de turma, declarar matrícula, declarar imposto de renda; 
+- Motivo: O campo deve ser preenchido com o motivo da solicitação;
+- Descrição: O campo deve ser preenchido com os detalhes da solicitação;
+
+Abaixo dos campos estão 2 botões:
+- Enviar Solicitação: O botão, que envia a solicitação de serviço, será pressionável somente após o preenchimento de todos os campos;
+- Página Principal: Direciona o usuário de volta ao home.
+
+Ao pressionar "Dados Pessoais", o usuário será direcionado para uma página com apenas um campo pedindo a matrícula do aluno. Após digitar a matrícula, as seguintes informações serão exibidas:
+- Matrícula;
+- Idade;
+- Tipo de usuário;
+- Curso;
+- Endereço;
+- Período de ingresso;
+
+**Diagrama de Atividade do Sistema:**
 
 ![Diagrama](imgdump2/diagrama-entrega-2-(3).png)
 
-Issues/ Bug Tracker:
+**Issues/ Bug Tracker:**
 
  - Issues em Aberto:
 
  - Issues Fechadas:
 
-Print do Backlog do Projeto:
+**Print do Backlog do Projeto:**
 ![Backlog](imgdump2/backlog-entrega-2-(3).png)
 
-Print do Quadro da Sprint:
+**Print do Quadro da Sprint:**
 ![Quadro da Sprint](imgdump2/sprint-entrega-2-(2).png)
 
-Relato da Programação em Par Experimentada:
+**Relato da Programação em Par Experimentada:**
 <br><br>
 Este relatório tem como objetivo discutir a prática de Pair Programming aplicada ao desenvolvimento do projeto Alphatech Educational, uma plataforma baseada em Django voltada para a gestão educacional. O Alphatech Educational é projetado para atender às necessidades de instituições de ensino, oferecendo funcionalidades como cadastro de professores e estudantes, gestão de boletins e um calendário acadêmico integrado. Através do Pair Programming, buscamos melhorar a eficiência, a qualidade do código e a colaboração no desenvolvimento dessas funcionalidades, maximizando a produtividade e a inovação no projeto. Os pares foram divididos como:
 <br><br>
