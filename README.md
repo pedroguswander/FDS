@@ -21,22 +21,7 @@ Python 3.6 ou superior.
     -  [ Quadro da Sprint 1 inicializada](Quadro.md)
 
  * Entrega 2
-  <p>Links:</p>
-   <ul>
-  <li>
-    <a  href="https://cesar-team-c925b8yd.atlassian.net/jira/software/projects/AW/boards/5?atlOrigin=eyJpIjoiOGQyNjQxNmVlNzYxNDUzNmEwMDA5Y2Y4YTZiMmVkMmEiLCJwIjoiaiJ9"
-      >Projeto - Jira</a>
-  </li>
-    <li>
-    <a  href="https://www.figma.com/design/7uEuFDZ5T9I2HeTYMGfnR9/FDS-Entrega-1?node-id=0-1&t=nimLCI6xdHeemn50-1"
-      >Protótipo Lo-Fi & SketchBoard Figma</a>
-  </li>
-   <li>
-    <a  href=""
-      >Screencast - Entrega 02</a>
-  </li>
-</ul>
-<br/>
+    - [Screencast - Entrega 2](https://youtu.be/Sw1efqT8uFA)
 
 Deployment das histórias produzidas:
 <ul>
