@@ -102,84 +102,6 @@
     </style>
 </head>
 <body>
-    <script>
-// Função para obter o número de dias em um mês
-        function diasNoMes(mes, ano) {
-            return new Date(ano, mes, 0).getDate();
-        }
-
-// Função para gerar o calendário
-        function gerarCalendario(mes, ano) {
-            const diasSemana = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
-            const calendarioDiv = document.getElementById("calendario");
-            calendarioDiv.innerHTML = ''; // Limpar o calendário anterior
-
-        // Exibir nome do mês e ano
-            const mesAno = new Date(ano, mes).toLocaleString('pt-BR', { month: 'long', year: 'numeric' });
-            document.getElementById("mes-ano").innerText = mesAno;
-
-    // Criar cabeçalho dos dias da semana
-        diasSemana.forEach(dia => {
-            const diaDiv = document.createElement('div');
-            diaDiv.className = 'day day-header';
-            diaDiv.innerText = dia;
-            calendarioDiv.appendChild(diaDiv);
-    });
-
-    const primeiroDia = new Date(ano, mes - 1, 1).getDay(); // 0 = Domingo, 1 = Segunda, ...
-    const diasNoMesAtual = diasNoMes(mes, ano);
-
-    // Adicionar espaços vazios antes do primeiro dia
-    for (let i = 0; i < (primeiroDia === 0 ? 6 : primeiroDia - 1); i++) {
-        const vazioDiv = document.createElement('div');
-        vazioDiv.className = 'day';
-        calendarioDiv.appendChild(vazioDiv);
-    }
-
-    // Preencher dias do mês
-    for (let dia = 1; dia <= diasNoMesAtual; dia++) {
-        const diaDiv = document.createElement('div');
-        diaDiv.className = 'day';
-        diaDiv.innerText = dia;
-        diaDiv.onclick = function () { entradaEvento(this); }; // Adicionar evento de clique
-        calendarioDiv.appendChild(diaDiv);
-    }
-}
-
-// Controle de navegação de meses
-let mesAtual = new Date().getMonth() + 1; // Meses vão de 0 a 11, então somamos 1
-let anoAtual = 2024; // Definir o ano desejado
-
-// Gerar o calendário inicial
-gerarCalendario(mesAtual, anoAtual);
-
-// Eventos para navegação
-document.getElementById("mes-anterior").addEventListener("click", function() {
-    mesAtual--;
-    if (mesAtual < 1) {
-        mesAtual = 12;
-        anoAtual--;
-    }
-    gerarCalendario(mesAtual, anoAtual);
-});
-
-document.getElementById("mes-posterior").addEventListener("click", function() {
-    mesAtual++;
-    if (mesAtual > 12) {
-        mesAtual = 1;
-        anoAtual++;
-    }
-    gerarCalendario(mesAtual, anoAtual);
-});
-
-// Função para mostrar o formulário ao clicar em um dia
-/*function entradaEvento(el) {
-    console.log("Dia clicado: " + el.innerText);
-    const entrada = document.getElementById("entrada");
-    entrada.style.display = 'block';
-}*/
-
-    </script>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -188,8 +110,9 @@ document.getElementById("mes-posterior").addEventListener("click", function() {
                 <a href="#" class="list-group-item list-group-item-action">Home</a>
                 <a href="#" class="list-group-item list-group-item-action">Boletim</a>
                 <a href="#" class="list-group-item list-group-item-action">Frequência</a>
-                <a href="{% url 'calendario' troca_mes %}" class="list-group-item list-group-item-action">Calendário</a>
+                <a href="{% url 'calendario' troca_mes troca_ano %}" class="list-group-item list-group-item-action">Calendário</a>
                 <a href="{% url 'nova_solicitacao' %}" class="list-group-item list-group-item-action">Serviços</a>
+                <a href="{% url 'usuario' %}" class="list-group-item list-group-item-action">Dados Pessoais</a>
             </div>
         </div>
         <!-- Page Content -->
@@ -226,11 +149,11 @@ document.getElementById("mes-posterior").addEventListener("click", function() {
 
                     {% for semana in dias %}
                         {% for dia in semana %}
-                            <div class="day" id="rect" onclick="entradaEvento(this)">
+                            <div class="day" id="rect" onclick="">
                                 {% if dia != 0 %}
                                     {{ dia }}
                                     {% for evento in eventos %}
-                                        {% if dia == evento.dia and mes == evento.mes %}
+                                        {% if dia == evento.dia and mes == evento.mes and ano == evento.ano %}
                                             <p id="descricao_evento">{{ evento.descricao }}</p>
                                         {% endif %}
                                     {% empty %}
