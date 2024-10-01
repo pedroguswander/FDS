@@ -90,12 +90,6 @@ Ao pressionar "Dados Pessoais", o usuário será direcionado para uma página co
 
 ![Diagrama](imgdump2/diagrama-entrega-2-(3).png)
 
-**Issues/ Bug Tracker:**
-
- - Issues em Aberto:
-
- - Issues Fechadas:
-
 **Print do Backlog do Projeto:**
 ![Backlog](imgdump2/backlog-entrega-2-(3).png)
 
