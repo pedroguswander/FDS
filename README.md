@@ -49,7 +49,27 @@ Deployment das histórias produzidas:
 
 Instruções de Acesso:
 
+Essa sessão descreve as funcionalidades disponíveis atualmente no menu de navegação do portal acadêmico da AlphaTech na Azure Websites, até o momento foram implementadas apenas histórias para alunos, portanto não será disponível visualizar as histórias para outros tipo de usuários (professores) .  A página inicial do site é o Login, onde é necessário por o nome de usuário e senha, se ainda não estiver cadastrado é possível clicar em "cadastre-se" para enviar suas informações de cadastro e criar seu perfil, serão necessárias informações como:
+- Matrícula
+- Nome 
+- Idade
+- Tipo de usuário (aluno/ professor)
+- Curso
+- Endereço
+- Período de Ingresso
+- Senha
+
+Ao cadastrar suas informações no banco de dados poderá prosseguir para a Home Page que contém uma tela de boas vindas que possui um menu de navegação lateral, que é por onde é possível ver todas as funcionalidades implementadas, atualmente são:
+
+- Calendário
+- Serviços
+- Dados pessoais
+
+
+Ao pressionar Calendário, aparecerá o calendário anual, apartir de setembro de 2024, com eventos que o usuário poderá registrar e deixar salvo em seu calendário pessoal, como uma espécie de agenda, selecionando uma data, dando um título do evento e por fim clicando em "Registre um Novo Evento", para salvar essas informações no banco de dados e exibi-lo em seu Calendário. Também é possível navegar entres os meses.
+
 Diagrama de Atividade do Sistema:
+
 ![Diagrama](imgdump2/diagrama-entrega-2-(3).png)
 
 Issues/ Bug Tracker:
