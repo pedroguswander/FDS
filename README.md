@@ -17,7 +17,7 @@ O AlphaTech Educacional será um portal acadêmico inovador, projetado para ofer
 - [Site](https://siteescolar-ccchgxgfe8gdfaf0.brazilsouth-01.azurewebsites.net/)
 - [Instruções de Uso](https://docs.google.com/document/d/1c1OgO7LOwW2Inl0H0sZEEPRcILvZiO6kl6c-bOLQv3Y/edit?usp=sharing)
 
-## Entregas
+## 📦 Entregas
 
 <details>
 <summary>Entrega 1</summary>
