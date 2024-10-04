@@ -37,7 +37,6 @@ O AlphaTech Educacional será um portal acadêmico inovador, projetado para ofer
     <li><a href="imgdump2/diagrama-entrega-2-(3).png" >Diagrama de Atividade do Sistema</a></li>
     <li><a href="imgdump2/backlog-entrega-2-(3).png" >Print do Backlog do Projeto</a></li>
     <li><a href="imgdump2/sprint-entrega-2-(2).png" >Print do Quadro da Sprint</a></li>
-    <li><a href="https://docs.google.com/document/d/1kep83xIiUjK_3cPfAEYYdY4Vriftqdxe4PgvfP7CVpA/edit?usp=sharing"> Relato da programação em par </a></li>
     <li><a href="https://docs.google.com/document/d/1c1OgO7LOwW2Inl0H0sZEEPRcILvZiO6kl6c-bOLQv3Y/edit?usp=sharing"> Instruções de Acesso</a></li>
 </ul>
 </details>
