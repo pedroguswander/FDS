@@ -2,7 +2,16 @@
 
 O AlphaTech Educacional será um portal acadêmico inovador, projetado para oferecer uma plataforma completa para instituições de ensino e alunos. O objetivo é facilitar o acesso a conteúdos educacionais, matrículas, notas e acompanhamento de desempenho acadêmico. Através de uma interface amigável e intuitiva, alunos poderão acessar recursos de aprendizado, realizar avaliações e monitorar seu progresso. Instituições poderão gerenciar turmas, cursos e materiais de forma centralizada, oferecendo uma experiência de ensino mais eficiente e personalizada para todos os envolvidos.
 
-## Funcionalidades mais importantes
+## Funcionalidades Implementadas
+
+- **Calendário:** Exibe o calendário anual a partir de setembro de 2024, onde o usuário pode registrar e salvar eventos no calendário pessoal, com título e data. É possível navegar entre meses.
+
+- **Serviços:** Página onde os usuários podem solicitar serviços como troca de turma, declaração de matrícula ou declaração de imposto de renda, preenchendo matrícula, tipo de serviço, motivo e descrição.
+
+- **Dados Pessoais:** Permite ao usuário visualizar suas informações pessoais (matrícula, idade, tipo de usuário, curso, endereço e período de ingresso) ao inserir a matrícula.
+
+
+
 
 ## 💻 Tecnologias Usadas
 - **Linguagem de Programação**:<br>![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -37,7 +46,6 @@ O AlphaTech Educacional será um portal acadêmico inovador, projetado para ofer
     <li><a href="imgdump2/diagrama-entrega-2-(3).png" >Diagrama de Atividade do Sistema</a></li>
     <li><a href="imgdump2/backlog-entrega-2-(3).png" >Print do Backlog do Projeto</a></li>
     <li><a href="imgdump2/sprint-entrega-2-(2).png" >Print do Quadro da Sprint</a></li>
-    <li><a href="https://docs.google.com/document/d/1c1OgO7LOwW2Inl0H0sZEEPRcILvZiO6kl6c-bOLQv3Y/edit?usp=sharing"> Instruções de Acesso</a></li>
 </ul>
 </details>
 
