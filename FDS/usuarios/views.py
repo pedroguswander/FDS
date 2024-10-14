@@ -8,6 +8,9 @@ from django.contrib.auth.hashers import make_password
 from .models import Evento
 import calendar
 from datetime import datetime
+from .models import Materia
+
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -166,7 +169,7 @@ def calendario_view(request, troca_mes, troca_ano):
         evento.dia = int(data_evento[2])
         evento.ano = int(data_evento[0])
 
-    return render(request, 'calendario.html', {
+    return render(request, 'usuarios/calendario.html', {
         'dias': dias,
         'mes_nome': calendar.month_name[mes],
         'eventos': eventos,
@@ -195,3 +198,9 @@ def usuario_view(request):
             error_message = 'Por favor, insira uma matrícula válida.'
 
     return render(request, 'usuarios/usuario.html', {'usuario': usuario, 'error_message': error_message, 'mes' : mes, 'ano' : ano})
+
+def listar_materias(request):
+    materias = Materia.objects.all()
+    mes = datetime.now().month
+    ano = datetime.now().year
+    return render(request, 'usuarios/listar_materias.html', {'materias': materias, 'mes': mes, 'ano': ano})
