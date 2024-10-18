@@ -33,11 +33,8 @@ jobs:
      
 
       - name: Zip artifact for deployment
-        run: |
-          cd FDS/
-          zip release.zip ./* -r
-          cd ..
-          mv FDS/release.zip .
+        run: zip release.zip ./* -r
+        
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
