@@ -42,7 +42,7 @@ O AlphaTech Educacional será um portal acadêmico inovador, projetado para ofer
 <summary>Entrega 2</summary>
 <ul>
     <li><a href="https://youtu.be/Sw1efqT8uFA">Screencast - Entrega 2</a></li>
-    <li><a href="https://siteescolar-ccchgxgfe8gdfaf0.brazilsouth-01.azurewebsites.net/">Deploy na Azure</a></li>
+    <li><a href="alphatech-btdjdsgcg6dff6f4.brazilsouth-01.azurewebsites.net">Deploy na Azure</a></li>
     <li><a href="imgdump2/diagrama-entrega-2-(3).png" >Diagrama de Atividade do Sistema</a></li>
     <li><a href="imgdump2/backlog-entrega-2-(3).png" >Print do Backlog do Projeto</a></li>
     <li><a href="imgdump2/sprint-entrega-2-(2).png" >Print do Quadro da Sprint</a></li>
