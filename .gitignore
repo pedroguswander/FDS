@@ -9,6 +9,11 @@ media
 # Backup files #
 *.bak
 
+#Cypress
+node_modules/
+package-lock.json
+package.json
+
 # If you are using PyCharm #
 .idea/**/workspace.xml
 .idea/**/tasks.xml

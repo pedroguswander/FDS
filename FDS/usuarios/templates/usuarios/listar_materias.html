@@ -86,7 +86,7 @@
                             <p>{{ materia.descricao }}</p>
     
                             {% if is_professor %}
-                                <div>
+                                <div id="div">
                                     <a href="{% url 'adicionar_faltas' materia.id %}" class="btn btn-warning btn-sm">Adicionar Faltas</a>
                                     <a href="{% url 'adicionar_notas' materia.id %}" class="btn btn-success btn-sm">Adicionar Notas</a>
                                 </div>
