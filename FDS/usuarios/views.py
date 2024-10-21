@@ -196,7 +196,7 @@ def usuario_view(request):
 
     if 'matricula' in request.GET:
         matricula = request.GET['matricula']
-        if matricula:
+        if matricula == request.user.username :
             try:
                 usuario = Usuario.objects.get(matricula=matricula)
             except Usuario.DoesNotExist:
