@@ -75,4 +75,39 @@ describe('Teste de registrar presença/falta dos alunos', () => {
         cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
         cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible');
     })
+
+    after(() => {
+        cy.visit('/admin/');
+        cy.get('#id_username').type('pedrogusmao');
+        cy.get('#id_password').type('123');
+        cy.get('.submit-row > input').click();
+        cy.get('#auth-user > a').click();
+        cy.get('#searchbar').type('1212');
+        cy.get('#changelist-search > div > [type="submit"]').click();
+        cy.get('.action-select').click();
+        cy.get('select').select('Delete selected users');
+        cy.get('.button').click();
+        cy.get('div > [type="submit"]').click();
+    })
+
+    after(() => {
+        cy.visit('/admin/');
+        cy.get('#auth-user > a').click();
+        cy.get('#searchbar').type('0102');
+        cy.get('#changelist-search > div > [type="submit"]').click();
+        cy.get('.action-select').click();
+        cy.get('select').select('Delete selected users');
+        cy.get('.button').click();
+        cy.get('div > [type="submit"]').click();
+    })
+
+    after(() => {
+        cy.visit('/admin/');
+        cy.get('#auth-user > a').click();
+        cy.get('#usuarios-materia > a').click();
+        cy.get('#action-toggle').click();
+        cy.get('select').select('Delete selected materias');
+        cy.get('.button').click();
+        cy.get('div > [type="submit"]').click();
+    })
 })

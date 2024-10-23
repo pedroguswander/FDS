@@ -1,6 +1,20 @@
-
-
 describe('Teste de registrar nota dos alunos', () => {
+    before(() => {
+        const nomes = ['FDS', 'Logica para computação', 'IHC', 'Fundamentos de projetos: Gestão de projetos', 'PIF', 'Projeto 2']
+        cy.visit('/admin/');
+        cy.get('#id_username').type('pedrogusmao');
+        cy.get('#id_password').type('123');
+        cy.get('.submit-row > input').click();
+        cy.get('#usuarios-materia > a').click();
+
+        for (let i = 0; i < 6; i++) {
+            cy.get('li > .addlink').click();
+            cy.get('#id_nome').type(nomes[i]);
+            cy.get('#id_descricao').type('nada');
+            cy.get('.default').click()
+        } 
+    })
+
     before(() => {
         cy.visit('/');
         cy.get('p > a').click();
@@ -59,22 +73,17 @@ describe('Teste de registrar nota dos alunos', () => {
         cy.get('.alert').should('be.visible');
     })
 
-    it('Professor registrar Nota ', () => {
-        let i = 1;
+    it('Professor registrar nota com suscesso', () => {
         let arr = [7.2, 9.8, 9.4, 9.5, 8.7, 7.1];
-        cy.get('.list-group-item').each(($el) => {
-            if (i == 7) {
-                i = 6;
-            }
-            cy.get($el).get('#div').get(`:nth-child(${i}) > div > .btn-success`).click();
+        for (let i = 1; i <= 6; i++) { 
+            cy.get(`:nth-child(${i}) > div > .btn-success`).click();
             cy.get('#aluno').select('Pedro');
             cy.get('#nota').type(arr[i-1]);
             cy.get('.btn').click();
-            i+=1;
-        })
+        }
     })
 
-    it('Aluno consultar Nota' ,() => {
+    it('aluno consultar nota com sucesso' ,() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('0102');
         cy.get(':nth-child(3) > input').type('123');
