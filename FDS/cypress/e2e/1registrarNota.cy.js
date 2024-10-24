@@ -1,4 +1,5 @@
 describe('Teste de registrar nota dos alunos', () => {
+    describe('Teste - Professor', () => {
     before(() => {
         const nomes = ['FDS', 'Logica para computação', 'IHC', 'Fundamentos de projetos: Gestão de projetos', 'PIF', 'Projeto 2']
         cy.visit('/admin/');
@@ -83,6 +84,9 @@ describe('Teste de registrar nota dos alunos', () => {
         }
     })
 
+    })
+
+    describe('Teste - Aluno', () => {
     it('aluno consultar nota com sucesso' ,() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('0102');
@@ -92,6 +96,8 @@ describe('Teste de registrar nota dos alunos', () => {
         cy.get('[href="/materias/"]').click();
         cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
         cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible');
+    })
+    
     })
 
    after(() => {

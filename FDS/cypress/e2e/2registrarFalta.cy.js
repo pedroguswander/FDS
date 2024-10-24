@@ -1,5 +1,6 @@
 
-describe('Teste de registrar presença/falta dos alunos', () => {
+describe('Teste de registrar presença/falta dos alunos e consultar faltas', () => {
+    describe('Teste - Professor', () => {
     before(() => {
         cy.visit('/');
         cy.get('p > a').click();
@@ -64,7 +65,8 @@ describe('Teste de registrar presença/falta dos alunos', () => {
             cy.get('.btn').click();
         }
     })
-
+    })
+    describe('Teste - Aluno', () => {
     it('Consultar faltas' ,() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('0102');
@@ -74,6 +76,7 @@ describe('Teste de registrar presença/falta dos alunos', () => {
         cy.get('[href="/materias/"]').click();
         cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
         cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible');
+    })
     })
 
     after(() => {
