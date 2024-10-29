@@ -1,4 +1,4 @@
-describe('Teste de registrar nota dos alunos', () => {
+describe('Teste de registrar nota dos alunos e consultar notas', () => {
     describe('Teste - Professor', () => {
     before(() => {
         const nomes = ['FDS', 'Logica para computação', 'IHC', 'Fundamentos de projetos: Gestão de projetos', 'PIF', 'Projeto 2']
@@ -97,7 +97,7 @@ describe('Teste de registrar nota dos alunos', () => {
         cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
         cy.get('tbody > :nth-child(1) > :nth-child(3)').should('be.visible');
     })
-    
+
     })
 
    after(() => {
