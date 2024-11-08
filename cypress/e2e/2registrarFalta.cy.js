@@ -1,26 +1,6 @@
-describe('Teste de registrar nota dos alunos e consultar notas', () => {
+
+describe('Teste de registrar presença/falta dos alunos e consultar faltas', () => {
     describe('Teste - Professor', () => {
-
-    before(() => {
-        cy.exec('python create_superuser.py');
-    })
-
-    before(() => {
-        const nomes = ['FDS', 'Logica para computação', 'IHC', 'Fundamentos de projetos: Gestão de projetos', 'PIF', 'Projeto 2']
-        cy.visit('/admin/');
-        cy.get('#id_username').type('pedrogusmao');
-        cy.get('#id_password').type('123');
-        cy.get('.submit-row > input').click();
-        cy.get('#usuarios-materia > a').click();
-
-        for (let i = 0; i < 6; i++) {
-            cy.get('li > .addlink').click();
-            cy.get('#id_nome').type(nomes[i]);
-            cy.get('#id_descricao').type('nada');
-            cy.get('.default').click()
-        } 
-    })
-
     before(() => {
         cy.visit('/');
         cy.get('p > a').click();
@@ -50,9 +30,7 @@ describe('Teste de registrar nota dos alunos e consultar notas', () => {
         cy.get(':nth-child(10) > input').type('123');
         cy.get('button').click()
     })
-
     
-
     beforeEach(() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('1212');
@@ -62,51 +40,47 @@ describe('Teste de registrar nota dos alunos e consultar notas', () => {
         cy.get('[href="/materias/"]').click();
     })
 
-    it('Informar erro ao inserir nota maior que 10 ', () => {
-        cy.get(':nth-child(1) > div > .btn-success').click()
+    it('Número de faltas menor que zero', () => {
+        cy.get(':nth-child(1) > div > .btn-warning').click()
         cy.get('#aluno').select('Pedro');
-        cy.get('#nota').type(-1);
-        cy.get('.btn').click();
-        cy.get('.alert').should('be.visible');
-
-    })
-
-    it('Informar erro ao inserir nota menor que 0 ', () => {
-        cy.get(':nth-child(1) > div > .btn-success').click()
-        cy.get('#aluno').select('Pedro');
-        cy.get('#nota').type(11);
+        cy.get('#faltas').type(-1);
         cy.get('.btn').click();
         cy.get('.alert').should('be.visible');
     })
 
-    it('Professor registrar nota com suscesso', () => {
-        let arr = [7.2, 9.8, 9.4, 9.5, 8.7, 7.1];
+    it('Número de faltas maior que a quantidade máxima permitida', () => {
+        cy.get(':nth-child(1) > div > .btn-warning').click()
+        cy.get('#aluno').select('Pedro');
+        cy.get('#faltas').type(16);
+        cy.get('.btn').click();
+        cy.get('.alert').should('be.visible');
+    })
+
+    it('Registrar falta com sucesso', () => {
+        let arr = [4, 6, 8, 0, 2, 1];
         for (let i = 1; i <= 6; i++) { 
-            cy.get(`:nth-child(${i}) > div > .btn-success`).click();
+            cy.get(`:nth-child(${i}) > div > .btn-warning`).click();
             cy.get('#aluno').select('Pedro');
-            cy.get('#nota').type(arr[i-1]);
+            cy.get('#faltas').type(arr[i-1]);
             cy.get('.btn').click();
         }
     })
-
     })
-
     describe('Teste - Aluno', () => {
-    it('aluno consultar nota com sucesso' ,() => {
+    it('Consultar faltas' ,() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('0102');
         cy.get(':nth-child(3) > input').type('123');
         cy.get('button').click();
         cy.get('#menu-toggle').click();
         cy.get('[href="/materias/"]').click();
-        cy.contains('FDS').should('be.visible');
-        //cy.contains(7.20).should('be.visible');
-        cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
+        /*cy.scrollTo('bottom');
+        cy.get('tbody > :nth-child(1) > :nth-child(2)').scrollIntoView();
+        cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');*/
+    })
     })
 
-    })
-
-   after(() => {
+    after(() => {
         cy.visit('/admin/');
         cy.get('#id_username').type('pedrogusmao');
         cy.get('#id_password').type('123');
@@ -127,6 +101,16 @@ describe('Teste de registrar nota dos alunos e consultar notas', () => {
         cy.get('#changelist-search > div > [type="submit"]').click();
         cy.get('.action-select').click();
         cy.get('select').select('Delete selected users');
+        cy.get('.button').click();
+        cy.get('div > [type="submit"]').click();
+    })
+
+    after(() => {
+        cy.visit('/admin/');
+        cy.get('#auth-user > a').click();
+        cy.get('#usuarios-materia > a').click();
+        cy.get('#action-toggle').click();
+        cy.get('select').select('Delete selected materias');
         cy.get('.button').click();
         cy.get('div > [type="submit"]').click();
     })

@@ -1,26 +1,4 @@
-describe('Teste de registrar nota dos alunos e consultar notas', () => {
-    describe('Teste - Professor', () => {
-
-    before(() => {
-        cy.exec('python create_superuser.py');
-    })
-
-    before(() => {
-        const nomes = ['FDS', 'Logica para computação', 'IHC', 'Fundamentos de projetos: Gestão de projetos', 'PIF', 'Projeto 2']
-        cy.visit('/admin/');
-        cy.get('#id_username').type('pedrogusmao');
-        cy.get('#id_password').type('123');
-        cy.get('.submit-row > input').click();
-        cy.get('#usuarios-materia > a').click();
-
-        for (let i = 0; i < 6; i++) {
-            cy.get('li > .addlink').click();
-            cy.get('#id_nome').type(nomes[i]);
-            cy.get('#id_descricao').type('nada');
-            cy.get('.default').click()
-        } 
-    })
-
+describe('Teste de aluno visualizar informações dos professores', () => {
     before(() => {
         cy.visit('/');
         cy.get('p > a').click();
@@ -35,7 +13,7 @@ describe('Teste de registrar nota dos alunos e consultar notas', () => {
         cy.get(':nth-child(10) > input').type('123');
         cy.get('button').click()
     })
-    
+
     before(() => {
         cy.visit('/');
         cy.get('p > a').click();
@@ -51,62 +29,33 @@ describe('Teste de registrar nota dos alunos e consultar notas', () => {
         cy.get('button').click()
     })
 
-    
-
     beforeEach(() => {
         cy.visit('/');
         cy.get('form > :nth-child(2) > input').type('1212');
         cy.get(':nth-child(3) > input').type('123');
         cy.get('button').click();
-        cy.get('#menu-toggle').click();
-        cy.get('[href="/materias/"]').click();
     })
 
-    it('Informar erro ao inserir nota maior que 10 ', () => {
-        cy.get(':nth-child(1) > div > .btn-success').click()
-        cy.get('#aluno').select('Pedro');
-        cy.get('#nota').type(-1);
+    it('Visualizar todos os campos de um aviso registrado', () => {
+        cy.get('.btn-primary').click();
+        cy.get('#titulo').type('Tech design');
+        cy.get('#conteudo').type('Evento para apresentação de vários projetos');
+        cy.get('input[type="date"]').type('2024-10-16');
+        cy.get('#ativo').click();
         cy.get('.btn').click();
-        cy.get('.alert').should('be.visible');
-
+        cy.get('ul').children().last().invoke('text').should('have.string', 'Tech design');
     })
 
-    it('Informar erro ao inserir nota menor que 0 ', () => {
-        cy.get(':nth-child(1) > div > .btn-success').click()
-        cy.get('#aluno').select('Pedro');
-        cy.get('#nota').type(11);
+    it('Mensagem "não ativa" não deve ser visualizado por aluno', () => {
+        cy.get('.btn-primary').click();
+        cy.get('#titulo').type('Tech design');
+        cy.get('#conteudo').type('Evento para apresentação de vários projetos');
+        cy.get('input[type="date"]').type('2024-10-16');
         cy.get('.btn').click();
-        cy.get('.alert').should('be.visible');
+        cy.get('ul').children().should('have.length', 1);    
     })
 
-    it('Professor registrar nota com suscesso', () => {
-        let arr = [7.2, 9.8, 9.4, 9.5, 8.7, 7.1];
-        for (let i = 1; i <= 6; i++) { 
-            cy.get(`:nth-child(${i}) > div > .btn-success`).click();
-            cy.get('#aluno').select('Pedro');
-            cy.get('#nota').type(arr[i-1]);
-            cy.get('.btn').click();
-        }
-    })
-
-    })
-
-    describe('Teste - Aluno', () => {
-    it('aluno consultar nota com sucesso' ,() => {
-        cy.visit('/');
-        cy.get('form > :nth-child(2) > input').type('0102');
-        cy.get(':nth-child(3) > input').type('123');
-        cy.get('button').click();
-        cy.get('#menu-toggle').click();
-        cy.get('[href="/materias/"]').click();
-        cy.contains('FDS').should('be.visible');
-        //cy.contains(7.20).should('be.visible');
-        cy.get('tbody > :nth-child(1) > :nth-child(2)').should('be.visible');
-    })
-
-    })
-
-   after(() => {
+    after(() => {
         cy.visit('/admin/');
         cy.get('#id_username').type('pedrogusmao');
         cy.get('#id_password').type('123');
